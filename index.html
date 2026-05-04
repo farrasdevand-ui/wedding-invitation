@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="assets/music.mp3">
+</audio>
+
+<button id="musicBtn">MUSIC</button>
+
+<!-- HERO -->
+<section class="hero">
+
+  <video autoplay muted loop class="hero-video">
+    <source src="assets/hero-video.mp4">
+  </video>
+
+  <div class="hero-content">
+    <h1 id="coupleName">Arkan & Caca</h1>
+    <button id="enterBtn">OPEN INVITATION</button>
+  </div>
+
+</section>
+
+<!-- STORY -->
+<section class="section reveal">
+  <h2>OUR STORY</h2>
+  <p>Two souls, one journey.</p>
+</section>
+
+<!-- EVENT -->
+<section class="section reveal">
+  <h2>THE WEDDING</h2>
+  <p id="weddingDate">21 June 2026</p>
+  <p id="weddingLocation">Gedung SMK Pertanian</p>
+</section>
+
+<!-- GALLERY -->
+<section class="section reveal">
+
+  <h2>GALLERY</h2>
+
+  <div class="gallery-slider">
+
+    <div class="slide active">
+      <img src="assets/story1.jpg">
+    </div>
+
+    <div class="slide">
+      <img src="assets/story2.jpg">
+    </div>
+
+    <div class="slide">
+      <img src="assets/gallery1.jpg">
+    </div>
+
+    <div class="slide">
+      <img src="assets/gallery2.jpg">
+    </div>
+
+  </div>
+
+  <div class="controls">
+    <button id="prev">PREV</button>
+    <button id="next">NEXT</button>
+  </div>
+
+</section>
+
+<!-- COUPLE VIDEO (BESAR DI BAWAH) -->
+<section class="section reveal">
+
+  <h2>OUR MOMENT</h2>
+
+  <div class="couple-video">
+    <video autoplay muted loop playsinline>
+      <source src="assets/couple.mp4">
+    </video>
+  </div>
+
+</section>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
