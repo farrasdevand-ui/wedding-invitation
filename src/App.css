@@ -1,0 +1,260 @@
+.cover-screen {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 40px 20px 56px;
+  background-color: #732925;
+  background-image: url('/images/cover-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.04) 0%,
+      rgba(0, 0, 0, 0.12) 35%,
+      rgba(0, 0, 0, 0.58) 100%
+    ),
+    rgba(115, 41, 37, 0.12);
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 680px);
+  text-align: center;
+  animation: cover-enter 900ms ease both;
+}
+
+.cover-label {
+  margin: 0 0 10px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.1rem, 4vw, 1.7rem);
+  font-weight: 400;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.35);
+}
+
+.cover-title {
+  margin: 0 0 26px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3.1rem, 13vw, 6.3rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  text-shadow: 0 4px 26px rgba(0, 0, 0, 0.4);
+}
+
+.recipient-label {
+  margin: 0 0 14px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1rem, 3.5vw, 1.35rem);
+}
+
+.guest-box {
+  width: 100%;
+  min-height: 78px;
+  display: grid;
+  place-items: center;
+  padding: 16px 24px;
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.guest-box p {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.35rem, 5vw, 2rem);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.open-button {
+  min-height: 64px;
+  margin-top: 32px;
+  padding: 15px 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 0;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #181513;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1rem, 4vw, 1.3rem);
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.open-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.3);
+}
+
+.open-button:active {
+  transform: translateY(0);
+}
+
+.open-button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 5px;
+}
+
+.envelope-icon {
+  width: 27px;
+  height: 27px;
+  flex-shrink: 0;
+}
+
+.invitation-page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  background: #f5efe9;
+  color: #732925;
+  text-align: center;
+}
+
+.invitation-placeholder h1 {
+  margin: 8px 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.8rem, 10vw, 5rem);
+  font-weight: 400;
+}
+
+@keyframes cover-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .cover-screen {
+    padding-bottom: 72px;
+  }
+
+  .guest-box {
+    min-height: 88px;
+  }
+}
+
+/* Mobile invitation layout refinement */
+.cover-content {
+  width: calc(100% - 40px);
+  max-width: 390px;
+}
+
+.cover-title {
+  font-size: clamp(3.2rem, 16vw, 4.1rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+}
+
+.cover-label {
+  margin-bottom: 8px;
+}
+
+.recipient-label {
+  margin-top: 4px;
+}
+
+.guest-box {
+  min-height: 88px;
+}
+
+.open-button {
+  margin-top: 30px;
+}
+
+/* Move the cover content slightly upward */
+.cover-screen {
+  padding-bottom: clamp(96px, 11vh, 118px);
+}
+
+/* Open invitation transition */
+.cover-wrapper {
+  min-height: 100svh;
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease,
+    filter 700ms ease;
+}
+
+.cover-wrapper.is-opening {
+  opacity: 0;
+  transform: scale(1.06);
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.invitation-enter {
+  animation: invitation-fade-in 800ms ease both;
+}
+
+.hero-section {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 28px;
+  background: #f4ede7;
+  color: #732925;
+  text-align: center;
+}
+
+.hero-label {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+.hero-section h1 {
+  margin: 0 0 24px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.hero-description {
+  max-width: 340px;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+@keyframes invitation-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
