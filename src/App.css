@@ -1854,3 +1854,174 @@
 .blessing-monogram {
   left: -14px;
 }
+
+/* Sejajarkan tanda & dengan posisi burung */
+.blessing-monogram {
+  left: -4px;
+}
+
+/* ===== SECTION 3 FILL DARK COLUMN ===== */
+
+.blessing-content {
+  width: 100%;
+  min-height: 100svh;
+  padding: 18px 24px 22px;
+  justify-content: flex-start;
+}
+
+/* Hilangkan area kosong yang sebelumnya disiapkan untuk galeri */
+.section-three-gallery-space {
+  display: none;
+}
+
+.blessing-monogram {
+  position: relative;
+  left: -4px;
+  top: 0;
+  margin: 0 0 2px;
+  font-size: clamp(4.1rem, 17vw, 5.2rem);
+  line-height: 0.9;
+}
+
+.blessing-bird-wrapper {
+  width: 100%;
+  min-height: 66px;
+  margin: 0 0 4px;
+}
+
+.blessing-bird {
+  width: min(18vw, 68px);
+  max-width: 68px;
+}
+
+.blessing-bismillah {
+  margin: 0 0 10px;
+  font-size: clamp(1.55rem, 6.5vw, 1.9rem);
+  line-height: 1.25;
+}
+
+.blessing-arabic {
+  max-width: 345px;
+  margin: 0 0 10px;
+  font-size: clamp(0.92rem, 3.9vw, 1.05rem);
+  line-height: 1.7;
+}
+
+.blessing-translation {
+  max-width: 340px;
+  margin: 0;
+  font-size: clamp(0.88rem, 3.6vw, 0.98rem);
+  line-height: 1.4;
+}
+
+.blessing-reference {
+  margin: 12px 0 0;
+  font-size: 0.95rem;
+}
+
+/* Layar pendek: seluruh isi tetap muat dalam satu section */
+@media (max-height: 760px) {
+  .blessing-content {
+    padding-top: 12px;
+    padding-bottom: 14px;
+  }
+
+  .blessing-monogram {
+    font-size: 3.8rem;
+  }
+
+  .blessing-bird-wrapper {
+    min-height: 54px;
+    margin-bottom: 2px;
+  }
+
+  .blessing-bird {
+    width: 58px;
+    max-width: 58px;
+  }
+
+  .blessing-bismillah {
+    margin-bottom: 7px;
+    font-size: 1.35rem;
+  }
+
+  .blessing-arabic {
+    margin-bottom: 7px;
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  .blessing-translation {
+    font-size: 0.79rem;
+    line-height: 1.3;
+  }
+
+  .blessing-reference {
+    margin-top: 8px;
+  }
+}
+
+/* ===== SECTION 3 CONTENT INSIDE DARK RED AREA ===== */
+
+.blessing-content {
+  min-height: 100svh;
+  padding: 84px 24px 94px;
+  justify-content: space-between;
+}
+
+.blessing-monogram {
+  left: -4px;
+  top: 0;
+  margin: 0;
+}
+
+.blessing-bird-wrapper {
+  min-height: 68px;
+  margin: 0;
+}
+
+.blessing-bismillah,
+.blessing-arabic,
+.blessing-translation,
+.blessing-reference {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.section-three-gallery-space {
+  display: none;
+}
+
+@media (max-height: 760px) {
+  .blessing-content {
+    padding: 72px 22px 78px;
+    justify-content: space-between;
+  }
+
+  .blessing-monogram {
+    font-size: 3.7rem;
+  }
+
+  .blessing-bird-wrapper {
+    min-height: 56px;
+  }
+
+  .blessing-bird {
+    width: 58px;
+    max-width: 58px;
+  }
+
+  .blessing-bismillah {
+    font-size: 1.4rem;
+  }
+
+  .blessing-arabic {
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  .blessing-translation {
+    font-size: 0.8rem;
+    line-height: 1.32;
+  }
+}
