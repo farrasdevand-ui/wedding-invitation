@@ -2025,3 +2025,108 @@
     line-height: 1.32;
   }
 }
+
+
+/* ===== SECTION SCROLL REVEAL ANIMATION ===== */
+
+/*
+  Section menjadi trigger.
+  Komponen di dalam section muncul berurutan.
+*/
+.invitation-scroll.reveal-ready .reveal-up {
+  opacity: 0;
+  translate: 0 26px;
+  scale: 1;
+  filter: blur(3px);
+
+  transition-property:
+    opacity,
+    translate,
+    scale,
+    filter;
+
+  transition-duration:
+    680ms,
+    820ms,
+    820ms,
+    620ms;
+
+  transition-timing-function:
+    cubic-bezier(0.22, 1, 0.36, 1),
+    cubic-bezier(0.22, 1, 0.36, 1),
+    cubic-bezier(0.22, 1, 0.36, 1),
+    ease-out;
+
+  transition-delay:
+    var(--reveal-delay, 80ms) !important;
+
+  will-change:
+    opacity,
+    translate,
+    scale,
+    filter;
+
+  backface-visibility: hidden;
+}
+
+/* Foto masuk sedikit membesar agar lebih lembut */
+.invitation-scroll.reveal-ready
+:is(
+  .portrait-frame,
+  .section4__photoFrame,
+  .section5__photoFrame
+).reveal-up {
+  translate: 0 30px;
+  scale: 0.96;
+}
+
+/* Card dan tombol masuk lebih ringan */
+.invitation-scroll.reveal-ready
+:is(
+  .countdown-card,
+  .save-date-button,
+  button
+).reveal-up {
+  translate: 0 18px;
+  scale: 0.975;
+}
+
+/* Judul tidak perlu blur terlalu berat */
+.invitation-scroll.reveal-ready
+:is(
+  h1,
+  h2,
+  h3,
+  .wedding-hero-title,
+  .section4__name,
+  .section5__name
+).reveal-up {
+  translate: 0 22px;
+  filter: blur(2px);
+}
+
+/* Kondisi akhir setiap komponen */
+.invitation-scroll.reveal-ready
+.reveal-up.is-visible {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+  filter: blur(0);
+}
+
+/* Hindari animasi berlebihan untuk pengguna sensitif motion */
+@media (prefers-reduced-motion: reduce) {
+  .invitation-scroll {
+    scroll-behavior: auto;
+  }
+
+  .invitation-scroll.reveal-ready .reveal-up {
+    opacity: 1;
+    translate: none;
+    scale: 1;
+    filter: none;
+    transition: none !important;
+  }
+}
+
+/* ===== END SECTION SCROLL REVEAL ANIMATION ===== */

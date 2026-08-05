@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { invitationConfig } from '../config/invitation'
+import Section4 from '../sections/Section4'
+import Section5 from '../sections/Section5'
 
 function calculateTimeLeft() {
   const targetDate = new Date(invitationConfig.eventDate).getTime()
@@ -117,29 +119,85 @@ export default function InvitationPage() {
       return undefined
     }
 
-    const revealElements =
-      scrollContainer.querySelectorAll('.reveal-up')
+    const revealSections = Array.from(
+      scrollContainer.querySelectorAll('.invitation-section'),
+    )
+
+    const sections = revealSections
+
+    scrollContainer.classList.add('reveal-ready')
+
+    sections.forEach((section) => {
+      const revealItems = Array.from(
+        section.querySelectorAll('.reveal-up'),
+      ).filter(
+        (element) =>
+          !element.closest('[aria-hidden="true"]'),
+      )
+
+      revealItems.forEach((element, index) => {
+        const delay = 80 + index * 110
+
+        element.style.setProperty(
+          '--reveal-delay',
+          `${delay}ms`,
+        )
+
+        if (!section.dataset.revealComplete) {
+          element.classList.remove('is-visible')
+        }
+      })
+    })
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          entry.target.classList.toggle(
-            'is-visible',
-            entry.isIntersecting,
+          if (!entry.isIntersecting) {
+            return
+          }
+
+          const section = entry.target
+
+          if (section.dataset.revealComplete === 'true') {
+            observer.unobserve(section)
+            return
+          }
+
+          const revealItems = Array.from(
+            section.querySelectorAll('.reveal-up'),
+          ).filter(
+            (element) =>
+              !element.closest('[aria-hidden="true"]'),
           )
+
+          window.requestAnimationFrame(() => {
+            section.classList.add('section-is-visible')
+
+            revealItems.forEach((element) => {
+              element.classList.add('is-visible')
+            })
+
+            section.dataset.revealComplete = 'true'
+          })
+
+          observer.unobserve(section)
         })
       },
       {
         root: scrollContainer,
-        threshold: 0.35,
+        threshold: 0.28,
+        rootMargin: '-6% 0px -12% 0px',
       },
     )
 
-    revealElements.forEach((element) => {
-      observer.observe(element)
+    sections.forEach((section) => {
+      observer.observe(section)
     })
 
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      scrollContainer.classList.remove('reveal-ready')
+    }
   }, [])
 
   useEffect(() => {
@@ -312,10 +370,10 @@ export default function InvitationPage() {
             {invitationConfig.hashtag}
           </p>
 
-          <div className="countdown-grid reveal-up reveal-delay-5">
+          <div className="countdown-grid">
             {countdownItems.map((item) => (
               <div
-                className="countdown-card"
+                className="countdown-card reveal-up"
                 key={item.label}
               >
                 <strong>{item.value}</strong>
@@ -401,6 +459,8 @@ export default function InvitationPage() {
         </div>
       </section>
 
+      <Section4 />
+      <Section5 />
 </main>
   )
 }

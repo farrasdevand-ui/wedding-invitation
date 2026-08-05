@@ -1,0 +1,307 @@
+.section5 {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  background-color: #fff2dc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #28231f;
+}
+
+.section5__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 22px 110px;
+  text-align: center;
+}
+
+.section5__photoFrame {
+  width: 210px;
+  margin: 0 auto 22px;
+  padding: 5px;
+  border-radius: 30px;
+  background: #f7f0e7;
+  box-shadow:
+    0 5px 14px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.75);
+}
+
+.section5__photo {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border-radius: 25px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.section5__name {
+  text-shadow: 0 3px 12px rgba(40, 0, 0, 0.55);
+  max-width: 390px;
+  margin: 0 auto 18px;
+  font-family:
+    'Cormorant Garamond',
+    Georgia,
+    'Times New Roman',
+    serif;
+  font-size: clamp(43px, 11.2vw, 54px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  color: #f5dfad;
+}
+
+.section5__role {
+  color: #fff2dc;
+  text-shadow: 0 2px 8px rgba(40, 0, 0, 0.65);
+  margin: 0 0 3px;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.section5__parents {
+  color: #fff2dc;
+  text-shadow: 0 2px 8px rgba(40, 0, 0, 0.65);
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.15;
+}
+
+@media (max-height: 760px) {
+  .section5__content {
+    padding-top: 8px;
+    padding-bottom: 92px;
+  }
+
+  .section5__photoFrame {
+    width: 185px;
+    margin-bottom: 16px;
+  }
+
+  .section5__photo {
+    height: 260px;
+  }
+
+  .section5__name {
+    margin-bottom: 14px;
+    font-size: 40px;
+  }
+
+  .section5__role,
+  .section5__parents {
+    font-size: 14px;
+  }
+}
+
+/* Turunkan komposisi Section 5 */
+.section5__content {
+  padding-top: clamp(58px, 7vh, 76px);
+  padding-bottom: 80px;
+}
+
+@media (max-height: 760px) {
+  .section5__content {
+    padding-top: 38px;
+    padding-bottom: 72px;
+  }
+}
+
+/* Pendekkan Section 5 dan sisakan area untuk asset tambahan */
+.section5 {
+  --section5-height: clamp(680px, 84svh, 740px);
+  min-height: var(--section5-height);
+}
+
+.section5__content {
+  min-height: var(--section5-height);
+  padding-bottom: 130px;
+}
+
+@media (max-height: 760px) {
+  .section5 {
+    --section5-height: 650px;
+  }
+
+  .section5__content {
+    padding-top: 38px;
+    padding-bottom: 110px;
+  }
+}
+
+/* Rapikan jarak dan komposisi teks Section 5 */
+.section5__photoFrame {
+  margin-bottom: 30px;
+}
+
+.section5__name {
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 24px;
+  padding: 0 10px;
+  font-size: clamp(38px, 10vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.section5__role {
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.section5__parents {
+  line-height: 1.35;
+}
+
+@media (max-width: 380px) {
+  .section5__name {
+    max-width: 340px;
+    font-size: 40px;
+  }
+}
+
+
+/* ===== SECTION 5 FINAL COMPOSITION ===== */
+
+/* Pastikan Section 5 kembali penuh satu layar */
+.section5.invitation-section {
+  width: 100%;
+  height: 100svh !important;
+  min-height: 100svh !important;
+  max-height: none !important;
+  flex: 0 0 100svh;
+  background-position: center top;
+}
+
+/* Komposisi dibuat lebih besar untuk mengisi ruang */
+.section5 .section5__content {
+  width: 100%;
+  height: 100svh !important;
+  min-height: 100svh !important;
+  max-height: none !important;
+  padding: 48px 18px 72px;
+}
+
+.section5__photoFrame {
+  width: 245px;
+  margin-bottom: 30px;
+  padding: 5px;
+  border-radius: 32px;
+}
+
+.section5__photo {
+  height: 350px;
+  border-radius: 27px;
+  object-position: center top;
+}
+
+.section5__name {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 24px;
+  padding: 0;
+  font-size: clamp(50px, 12.5vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.section5__role {
+  margin-bottom: 7px;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.section5__parents {
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+@media (max-width: 380px) {
+  .section5 .section5__content {
+    padding-top: 40px;
+  }
+
+  .section5__photoFrame {
+    width: 225px;
+    margin-bottom: 25px;
+  }
+
+  .section5__photo {
+    height: 325px;
+  }
+
+  .section5__name {
+    font-size: 46px;
+  }
+}
+
+@media (max-height: 760px) {
+  .section5 .section5__content {
+    padding-top: 28px;
+    padding-bottom: 48px;
+  }
+
+  .section5__photoFrame {
+    width: 220px;
+    margin-bottom: 22px;
+  }
+
+  .section5__photo {
+    height: 305px;
+  }
+
+  .section5__name {
+    margin-bottom: 18px;
+    font-size: 45px;
+  }
+
+  .section5__role {
+    font-size: 15px;
+  }
+
+  .section5__parents {
+    font-size: 15px;
+  }
+}
+
+/* ===== END SECTION 5 FINAL COMPOSITION ===== */
+
+
+/* ===== SECTION 5 SPACING REFINEMENT ===== */
+
+/* Beri ruang lebih lega antar foto, nama, dan orang tua */
+.section5__photoFrame {
+  margin-bottom: 40px;
+}
+
+.section5__name {
+  margin-bottom: 32px;
+}
+
+.section5__role {
+  margin-bottom: 8px;
+}
+
+.section5__parents {
+  line-height: 1.4;
+}
+
+@media (max-height: 760px) {
+  .section5__photoFrame {
+    margin-bottom: 28px;
+  }
+
+  .section5__name {
+    margin-bottom: 22px;
+  }
+}
+
+/* ===== END SECTION 5 SPACING REFINEMENT ===== */
