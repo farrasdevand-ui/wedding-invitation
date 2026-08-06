@@ -1,0 +1,339 @@
+.section8 {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  background-color: #76181a;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f8e5c3;
+  overflow: hidden;
+}
+
+.section8__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(70, 4, 7, 0.12),
+      rgba(48, 2, 4, 0.38)
+    );
+  pointer-events: none;
+}
+
+.section8__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100svh;
+  padding: 48px 20px 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section8__header {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.section8__eyebrow {
+  margin: 0 0 12px;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #e8be63;
+}
+
+.section8__title {
+  margin: 0;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+  font-size: clamp(29px, 7.6vw, 38px);
+  font-weight: 400;
+  line-height: 1.08;
+  color: #fff0d7;
+}
+
+.section8__subtitle {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: #e0b452;
+}
+
+.section8__ornament {
+  width: 110px;
+  margin: 13px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section8__ornament span {
+  flex: 1;
+  height: 1px;
+  background: rgba(224, 177, 68, 0.75);
+}
+
+.section8__ornament b {
+  color: #e0b144;
+}
+
+.section8__form,
+.section8__success {
+  width: 100%;
+  max-width: 360px;
+  padding: 22px 20px;
+  border: 1px solid rgba(221, 170, 49, 0.35);
+  border-radius: 22px;
+  background: rgba(82, 10, 12, 0.34);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 18px 38px rgba(40, 2, 4, 0.22);
+}
+
+.section8__field {
+  min-width: 0;
+  margin: 0 0 15px;
+  padding: 0;
+  border: 0;
+  text-align: left;
+}
+
+.section8__field label,
+.section8__field legend {
+  display: block;
+  margin: 0 0 7px;
+  padding: 0;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #f3dbb0;
+}
+
+.section8__field input,
+.section8__field textarea {
+  width: 100%;
+  border: 1px solid rgba(220, 169, 50, 0.48);
+  border-radius: 13px;
+  outline: none;
+  background: rgba(255, 240, 221, 0.08);
+  color: #fff3e1;
+  font-family: Georgia, serif;
+  font-size: 14px;
+}
+
+.section8__field input {
+  min-height: 48px;
+  padding: 0 14px;
+}
+
+.section8__field textarea {
+  min-height: 90px;
+  padding: 13px 14px;
+  resize: vertical;
+}
+
+.section8__field input::placeholder,
+.section8__field textarea::placeholder {
+  color: rgba(255, 231, 211, 0.45);
+}
+
+.section8__field input:focus,
+.section8__field textarea:focus {
+  border-color: #e3b33e;
+  box-shadow: 0 0 0 3px rgba(224, 174, 55, 0.12);
+}
+
+.section8__attendance {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.section8__choice {
+  position: relative;
+  min-height: 44px;
+  display: grid !important;
+  place-items: center;
+  margin: 0 !important;
+  border: 1px solid rgba(220, 169, 50, 0.48);
+  border-radius: 12px;
+  background: rgba(255, 240, 221, 0.06);
+  color: #e1b454 !important;
+  cursor: pointer;
+}
+
+.section8__choice input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.section8__choice span {
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.section8__choice.is-active {
+  border-color: #e3b33e;
+  background: #d8a72f;
+  color: #601311 !important;
+}
+
+.section8__guestCounter {
+  min-height: 48px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  border: 1px solid rgba(220, 169, 50, 0.48);
+  border-radius: 13px;
+  background: rgba(255, 240, 221, 0.07);
+}
+
+.section8__guestCounter button {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  padding: 0 0 2px;
+  border: 1px solid #dda936;
+  border-radius: 50%;
+  background: transparent;
+  color: #e7bb52;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.section8__guestCounter button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.section8__guestCounter output {
+  min-width: 22px;
+  color: #fff0d8;
+  text-align: center;
+}
+
+.section8__primaryButton {
+  width: 100%;
+  min-height: 46px;
+  border: 0;
+  border-radius: 12px;
+  background: #d6a52e;
+  color: #641411;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.section8__primaryButton:hover {
+  transform: translateY(-2px);
+  background: #e2b642;
+  box-shadow: 0 9px 20px rgba(40, 2, 3, 0.25);
+}
+
+.section8__primaryButton:active {
+  transform: translateY(0);
+}
+
+.section8__success {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.section8__successIcon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #dfae3b;
+  border-radius: 50%;
+  color: #e1b341;
+  font-size: 30px;
+}
+
+.section8__success h3 {
+  margin: 0 0 12px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+  font-size: 34px;
+  font-weight: 500;
+  color: #fff0d8;
+}
+
+.section8__success p {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #f3dab5;
+}
+
+@media (max-width: 380px) {
+  .section8__content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .section8__form,
+  .section8__success {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-height: 760px) {
+  .section8 {
+    overflow-y: auto;
+  }
+
+  .section8__content {
+    min-height: auto;
+    padding-top: 38px;
+    padding-bottom: 68px;
+  }
+
+  .section8__header {
+    margin-bottom: 15px;
+  }
+
+  .section8__title {
+    font-size: 27px;
+  }
+
+  .section8__form {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .section8__field {
+    margin-bottom: 12px;
+  }
+
+  .section8__field input {
+    min-height: 44px;
+  }
+
+  .section8__field textarea {
+    min-height: 76px;
+  }
+}

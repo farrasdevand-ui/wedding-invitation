@@ -305,3 +305,85 @@
 }
 
 /* ===== END SECTION 5 SPACING REFINEMENT ===== */
+
+
+
+
+
+/* ===== SECTION 5 PEACOCK DECORATION ===== */
+
+.section5 {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.section5__content {
+  position: relative;
+  z-index: 3;
+}
+
+.section5__peacocks {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.section5__peacock {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  animation: none !important;
+  transform: none !important;
+}
+
+.section5__peacock--left {
+  left: -6px;
+  bottom: 70px;
+  width: clamp(148px, 40vw, 176px);
+  max-height: 270px;
+}
+
+.section5__peacock--right {
+  right: -6px;
+  bottom: 78px;
+  width: clamp(150px, 42vw, 182px);
+  max-height: 210px;
+}
+
+@media (max-width: 380px) {
+  .section5__peacock--left {
+    left: -10px;
+    bottom: 66px;
+    width: 150px;
+  }
+
+  .section5__peacock--right {
+    right: -10px;
+    bottom: 72px;
+    width: 152px;
+  }
+}
+
+@media (max-height: 760px) {
+  .section5__peacock--left {
+    bottom: 58px;
+    width: 140px;
+  }
+
+  .section5__peacock--right {
+    bottom: 60px;
+    width: 144px;
+  }
+}
+
+/* ===== END SECTION 5 PEACOCK DECORATION ===== */
+
+/* Sembunyikan dekorasi merak sementara */
+.section5__peacocks {
+  display: none !important;
+}

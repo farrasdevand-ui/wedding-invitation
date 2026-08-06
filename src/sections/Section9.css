@@ -1,0 +1,467 @@
+.section9 {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  background-color: #76181a;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f6e5c7;
+  overflow: hidden;
+}
+
+.section9__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(82, 6, 8, 0.1),
+      rgba(52, 2, 4, 0.26)
+    );
+  pointer-events: none;
+}
+
+.section9__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100svh;
+  padding: 48px 18px 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 34px;
+  text-align: center;
+}
+
+.section9__main {
+  margin: auto 0 0;
+}
+
+.section9__eyebrow {
+  margin: 0 0 12px;
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: #efd59e;
+}
+
+.section9__title {
+  margin: 0 auto;
+  max-width: 360px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+  font-size: clamp(27px, 6.5vw, 39px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff0d8;
+}
+
+.section9__subtitle {
+  margin: 14px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(248, 228, 196, 0.72);
+}
+
+.section9__ornament {
+  width: 98px;
+  margin: 16px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.section9__ornament span {
+  flex: 1;
+  height: 1px;
+  background: rgba(219, 166, 53, 0.72);
+}
+
+.section9__ornament b {
+  color: #d8aa37;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.section9__actions {
+  width: 100%;
+  max-width: 320px;
+  margin: 24px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section9__actionButton {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1.4px solid #d7a52d;
+  border-radius: 12px;
+  background: rgba(110, 18, 18, 0.08);
+  color: #dcb04d;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+  font-size: 19px;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.section9__actionButton:hover {
+  transform: translateY(-2px);
+  background: rgba(122, 22, 22, 0.18);
+  box-shadow: 0 10px 22px rgba(42, 2, 4, 0.16);
+}
+
+.section9__actionButton.is-active {
+  background: rgba(122, 22, 22, 0.22);
+}
+
+.section9__actionIcon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.section9__card {
+  padding: 16px 16px 15px;
+  border: 1px solid rgba(219, 166, 53, 0.35);
+  border-radius: 16px;
+  background: rgba(82, 11, 11, 0.32);
+  box-shadow: 0 14px 30px rgba(35, 2, 3, 0.18);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.section9__cardLabel {
+  margin: 0 0 3px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d9ad49;
+}
+
+.section9__cardValue {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #fff0d8;
+}
+
+.section9__copyButton {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid rgba(218, 167, 55, 0.52);
+  border-radius: 10px;
+  background: rgba(255, 240, 221, 0.05);
+  color: #f2d699;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.section9__thanks {
+  margin: 22px 0 0;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #f6e5c7;
+}
+
+.section9__footer {
+  padding-top: 10px;
+}
+
+.section9__footerText {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-style: italic;
+  color: rgba(216, 171, 70, 0.72);
+}
+
+.section9__footerLogo {
+  width: max-content;
+  margin: 0 auto 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.88;
+  color: #ffffff;
+}
+
+.section9__footerLogoTop {
+  font-size: 26px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+}
+
+.section9__footerLogoBottom {
+  margin-top: -2px;
+  font-size: 22px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+}
+
+.section9__footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 11px;
+  color: rgba(216, 171, 70, 0.86);
+}
+
+.section9__footerLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.section9__footerDivider {
+  color: rgba(216, 171, 70, 0.6);
+}
+
+@media (max-width: 380px) {
+  .section9__content {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .section9__title {
+    font-size: 24px;
+  }
+
+  .section9__subtitle {
+    font-size: 12px;
+  }
+
+  .section9__actionButton {
+    font-size: 18px;
+  }
+}
+
+@media (max-height: 760px) {
+  .section9 {
+    overflow-y: auto;
+  }
+
+  .section9__content {
+    min-height: auto;
+    padding-top: 36px;
+    padding-bottom: 66px;
+    gap: 24px;
+  }
+
+  .section9__eyebrow {
+    margin-bottom: 10px;
+  }
+
+  .section9__title {
+    font-size: 24px;
+  }
+
+  .section9__subtitle {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  .section9__actions {
+    margin-top: 18px;
+  }
+
+  .section9__thanks {
+    margin-top: 16px;
+    font-size: 17px;
+  }
+
+  .section9__footerText {
+    margin-bottom: 10px;
+  }
+
+  .section9__footerLogo {
+    margin-bottom: 10px;
+  }
+
+  .section9__footerLinks {
+    gap: 8px;
+    font-size: 10px;
+  }
+}
+
+
+/* ===== SECTION 9 FINAL PROPORTION ===== */
+
+.section9 .section9__content {
+  min-height: 100svh;
+  padding: 52px 22px 28px;
+  gap: 24px;
+  justify-content: flex-start;
+}
+
+.section9 .section9__main {
+  width: 100%;
+  margin: 18px 0 0;
+}
+
+.section9 .section9__eyebrow {
+  margin-bottom: 14px;
+  font-size: 11px;
+  letter-spacing: 5px;
+}
+
+.section9 .section9__title {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  font-size: clamp(27px, 7vw, 34px);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
+
+.section9 .section9__subtitle {
+  max-width: 300px;
+  margin: 16px auto 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.section9 .section9__ornament {
+  margin-top: 18px;
+}
+
+.section9 .section9__actions {
+  max-width: 320px;
+  margin-top: 24px;
+  gap: 12px;
+}
+
+.section9 .section9__actionButton {
+  min-height: 54px;
+  font-size: 19px;
+}
+
+.section9 .section9__thanks {
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.section9 .section9__footer {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(216, 171, 70, 0.25);
+}
+
+.section9 .section9__footerText {
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+.section9 .section9__footerLogo {
+  margin-bottom: 13px;
+}
+
+.section9 .section9__footerLinks {
+  max-width: 360px;
+  margin: 0 auto;
+  gap: 9px;
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
+@media (max-width: 380px) {
+  .section9 .section9__content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section9 .section9__main {
+    margin-top: 10px;
+  }
+
+  .section9 .section9__title {
+    max-width: 330px;
+    font-size: 26px;
+  }
+
+  .section9 .section9__subtitle {
+    max-width: 285px;
+    font-size: 12.5px;
+  }
+
+  .section9 .section9__footerLinks {
+    max-width: 300px;
+    gap: 7px;
+    font-size: 9.5px;
+  }
+}
+
+@media (max-height: 760px) {
+  .section9 {
+    overflow-y: auto;
+  }
+
+  .section9 .section9__content {
+    min-height: auto;
+    padding-top: 34px;
+    padding-bottom: 24px;
+    gap: 20px;
+  }
+
+  .section9 .section9__main {
+    margin-top: 0;
+  }
+
+  .section9 .section9__title {
+    font-size: 25px;
+  }
+
+  .section9 .section9__subtitle {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .section9 .section9__actions {
+    margin-top: 18px;
+  }
+
+  .section9 .section9__actionButton {
+    min-height: 48px;
+  }
+
+  .section9 .section9__thanks {
+    margin-top: 17px;
+    font-size: 16px;
+  }
+
+  .section9 .section9__footer {
+    margin-top: 20px;
+    padding-top: 15px;
+  }
+}
+
+/* ===== END SECTION 9 FINAL PROPORTION ===== */

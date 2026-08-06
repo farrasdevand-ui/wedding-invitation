@@ -2,6 +2,10 @@ import { useEffect, useRef, useState } from 'react'
 import { invitationConfig } from '../config/invitation'
 import Section4 from '../sections/Section4'
 import Section5 from '../sections/Section5'
+import Section6 from '../sections/Section6'
+import Section7 from '../sections/Section7'
+import Section8 from '../sections/Section8'
+import Section9 from '../sections/Section9'
 
 function calculateTimeLeft() {
   const targetDate = new Date(invitationConfig.eventDate).getTime()
@@ -461,6 +465,10 @@ export default function InvitationPage() {
 
       <Section4 />
       <Section5 />
+      <Section6 />
+      <Section7 />
+      <Section8 />
+      <Section9 />
 </main>
   )
 }

@@ -1,0 +1,531 @@
+.section6 {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  background-color: #681813;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+.section6__header {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92%, 360px);
+  z-index: 3;
+  text-align: center;
+}
+
+.section6__heading {
+  margin: 0 0 10px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-size: clamp(36px, 9vw, 48px);
+  font-weight: 500;
+  line-height: 1;
+  color: #f8e6cf;
+  text-shadow: 0 3px 14px rgba(55, 8, 8, 0.6);
+}
+
+.section6__subtitle {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #fff3e6;
+  text-shadow: 0 2px 8px rgba(55, 8, 8, 0.55);
+}
+
+.section6__content {
+  position: relative;
+  z-index: 2;
+  width: 69%;
+  max-width: 300px;
+  min-height: 100svh;
+  margin: 0 auto;
+  padding:
+    clamp(208px, 24svh, 230px)
+    0
+    clamp(84px, 10svh, 98px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #4a221a;
+}
+
+.section6__logo {
+  display: block;
+  width: 118px;
+  max-height: 96px;
+  margin: 0 auto 22px;
+  object-fit: contain;
+}
+
+.section6__event {
+  width: 100%;
+}
+
+.section6__eventTitle {
+  margin: 0 0 12px;
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-size: clamp(34px, 8.8vw, 46px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #472019;
+}
+
+.section6__date {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #331a16;
+}
+
+.section6__time {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #3e241e;
+}
+
+.section6__ornament {
+  width: 100%;
+  margin: 24px 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section6__ornamentLine {
+  flex: 1;
+  height: 2px;
+  background: rgba(84, 44, 35, 0.9);
+}
+
+.section6__ornamentHeart {
+  font-size: 20px;
+  line-height: 1;
+  color: #4f1f18;
+}
+
+.section6__venue {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.section6__venueLabel {
+  margin: 0 0 9px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #331a16;
+}
+
+.section6__address {
+  margin: 0;
+  font-size: 13.2px;
+  line-height: 1.52;
+  color: #43241d;
+}
+
+.section6__mapsButton {
+  min-height: 44px;
+  margin: 20px auto 0;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1.8px solid #5b2820;
+  border-radius: 999px;
+  background: transparent;
+  color: #452018;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.section6__mapsButton:hover {
+  transform: translateY(-2px);
+  background: rgba(103, 38, 29, 0.07);
+  box-shadow: 0 8px 18px rgba(70, 24, 18, 0.1);
+}
+
+.section6__mapsButton:active {
+  transform: translateY(0);
+}
+
+.section6__mapIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 380px) {
+  .section6__header {
+    top: 66px;
+    width: min(92%, 340px);
+  }
+
+  .section6__heading {
+    font-size: 33px;
+  }
+
+  .section6__subtitle {
+    font-size: 12px;
+  }
+
+  .section6__content {
+    width: 69%;
+    max-width: 280px;
+    padding-top: 198px;
+    padding-bottom: 78px;
+  }
+
+  .section6__logo {
+    width: 106px;
+    max-height: 86px;
+    margin-bottom: 20px;
+  }
+
+  .section6__eventTitle {
+    font-size: 32px;
+  }
+
+  .section6__date {
+    font-size: 14px;
+  }
+
+  .section6__time {
+    font-size: 13px;
+  }
+
+  .section6__ornament {
+    margin: 22px 0;
+  }
+
+  .section6__venueLabel {
+    font-size: 14px;
+  }
+
+  .section6__address {
+    font-size: 12.3px;
+  }
+}
+
+@media (max-height: 760px) {
+  .section6__header {
+    top: 58px;
+  }
+
+  .section6__heading {
+    font-size: 31px;
+    margin-bottom: 8px;
+  }
+
+  .section6__subtitle {
+    font-size: 11.5px;
+  }
+
+  .section6__content {
+    padding-top: 182px;
+    padding-bottom: 66px;
+  }
+
+  .section6__logo {
+    width: 92px;
+    max-height: 72px;
+    margin-bottom: 16px;
+  }
+
+  .section6__eventTitle {
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+
+  .section6__date {
+    font-size: 12.5px;
+    margin-bottom: 5px;
+  }
+
+  .section6__time {
+    font-size: 11.8px;
+  }
+
+  .section6__ornament {
+    margin: 18px 0;
+    gap: 11px;
+  }
+
+  .section6__ornamentHeart {
+    font-size: 17px;
+  }
+
+  .section6__venue {
+    margin-top: 18px;
+  }
+
+  .section6__venueLabel {
+    font-size: 12.5px;
+    margin-bottom: 6px;
+  }
+
+  .section6__address {
+    font-size: 11.2px;
+    line-height: 1.45;
+  }
+
+  .section6__mapsButton {
+    min-height: 38px;
+    margin-top: 16px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+}
+
+
+/* ===== SECTION 6 FINAL BALANCE ===== */
+
+/* Sesuaikan isi dengan lebar bidang cream */
+.section6 .section6__content {
+  width: 57%;
+  max-width: 246px;
+  padding-top: clamp(180px, 21svh, 194px);
+  padding-bottom: 62px;
+}
+
+/* Rumah Gadang lebih dominan tetapi tetap proporsional */
+.section6 .section6__logo {
+  width: 126px;
+  max-width: 72%;
+  max-height: 90px;
+  margin: 0 auto 12px;
+}
+
+/* Typography dibuat lebih seimbang */
+.section6 .section6__eventTitle {
+  margin-bottom: 8px;
+  font-size: clamp(34px, 8.5vw, 40px);
+  line-height: 1;
+}
+
+.section6 .section6__date {
+  margin-bottom: 4px;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.section6 .section6__time {
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+/* Ornamen pemisah Akad dan Resepsi */
+.section6 .section6__ornament {
+  width: 100%;
+  margin: 16px 0 17px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+.section6 .section6__ornamentLine {
+  display: block;
+  flex: 1;
+  height: 1.5px;
+  background: #64362d;
+}
+
+.section6 .section6__ornamentHeart {
+  display: block;
+  font-size: 17px;
+  line-height: 1;
+  color: #582119;
+}
+
+/* Rapikan blok lokasi agar tidak keluar frame */
+.section6 .section6__venue {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.section6 .section6__venueLabel {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.section6 .section6__address {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 10.8px;
+  line-height: 1.45;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.section6 .section6__mapsButton {
+  min-height: 37px;
+  margin-top: 13px;
+  padding: 0 14px;
+  font-size: 11.5px;
+}
+
+@media (max-width: 380px) {
+  .section6 .section6__content {
+    width: 58%;
+    max-width: 238px;
+    padding-top: 172px;
+    padding-bottom: 56px;
+  }
+
+  .section6 .section6__logo {
+    width: 116px;
+    max-height: 84px;
+    margin-bottom: 10px;
+  }
+
+  .section6 .section6__eventTitle {
+    font-size: 32px;
+  }
+
+  .section6 .section6__address {
+    font-size: 10.2px;
+  }
+}
+
+@media (max-height: 760px) {
+  .section6 .section6__content {
+    padding-top: 158px;
+    padding-bottom: 48px;
+  }
+
+  .section6 .section6__logo {
+    width: 104px;
+    max-height: 76px;
+    margin-bottom: 9px;
+  }
+
+  .section6 .section6__eventTitle {
+    margin-bottom: 6px;
+    font-size: 28px;
+  }
+
+  .section6 .section6__date {
+    font-size: 11.5px;
+  }
+
+  .section6 .section6__time {
+    font-size: 10.8px;
+  }
+
+  .section6 .section6__ornament {
+    margin: 12px 0 13px;
+  }
+
+  .section6 .section6__venue {
+    margin-top: 12px;
+  }
+
+  .section6 .section6__address {
+    font-size: 9.8px;
+    line-height: 1.38;
+  }
+
+  .section6 .section6__mapsButton {
+    min-height: 33px;
+    margin-top: 10px;
+  }
+}
+
+/* ===== END SECTION 6 FINAL BALANCE ===== */
+
+/* Override: perbesar lagi Rumah Gadang */
+.section6 .section6__logo {
+  width: 146px !important;
+  max-width: 82% !important;
+  max-height: 108px !important;
+  margin-bottom: 10px !important;
+}
+
+@media (max-width: 380px) {
+  .section6 .section6__logo {
+    width: 132px !important;
+    max-height: 98px !important;
+  }
+}
+
+@media (max-height: 760px) {
+  .section6 .section6__logo {
+    width: 122px !important;
+    max-height: 90px !important;
+  }
+}
+
+/* Override final: Rumah Gadang dibesarkan lebih jauh */
+.section6 .section6__logo {
+  width: 180px !important;
+  max-width: 92% !important;
+  max-height: 130px !important;
+  margin-bottom: 8px !important;
+}
+
+@media (max-width: 380px) {
+  .section6 .section6__logo {
+    width: 160px !important;
+    max-height: 116px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+@media (max-height: 760px) {
+  .section6 .section6__logo {
+    width: 142px !important;
+    max-height: 104px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+/* Perbesar sedikit lagi Rumah Gadang */
+.section6 .section6__logo {
+  width: 195px !important;
+  max-width: 96% !important;
+  max-height: 142px !important;
+  margin-bottom: 6px !important;
+}
+
+@media (max-width: 380px) {
+  .section6 .section6__logo {
+    width: 174px !important;
+    max-height: 126px !important;
+  }
+}
+
+@media (max-height: 760px) {
+  .section6 .section6__logo {
+    width: 152px !important;
+    max-height: 110px !important;
+  }
+}
