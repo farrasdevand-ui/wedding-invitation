@@ -465,3 +465,68 @@
 }
 
 /* ===== END SECTION 9 FINAL PROPORTION ===== */
+
+
+/* ===== IVORY PALETTE SECTION 9 ===== */
+.section9__eyebrow,
+.section9__subtitle,
+.section9__ornament b,
+.section9__footerText,
+.section9__footerLinks {
+  color: #edd5b4;
+}
+
+.section9__title,
+.section9__thanks {
+  color: #fff0db;
+}
+
+.section9__ornament span {
+  background: rgba(247, 232, 208, 0.7);
+}
+
+.section9__actionButton {
+  border-color: #ead2af;
+  color: #f4dfc2;
+}
+
+.section9__actionButton:hover,
+.section9__actionButton.is-active {
+  background: rgba(247, 232, 208, 0.11);
+}
+
+.section9__actionIcon {
+  color: #f6e3c9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+}
+
+.section9__card {
+  border-color: rgba(247, 232, 208, 0.34);
+}
+
+.section9__cardLabel {
+  color: #e8cfad;
+}
+
+.section9__cardValue {
+  color: #fff0da;
+}
+
+.section9__copyButton {
+  border-color: rgba(247, 232, 208, 0.48);
+  color: #f4dfc2;
+}
+
+.section9__copyButton:hover {
+  background: rgba(247, 232, 208, 0.1);
+}
+
+.section9__footer {
+  border-top-color: rgba(247, 232, 208, 0.22);
+}
+
+.section9__footerDivider {
+  color: rgba(247, 232, 208, 0.48);
+}
+/* ===== END IVORY PALETTE SECTION 9 ===== */

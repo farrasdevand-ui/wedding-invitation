@@ -248,3 +248,37 @@
     transition: none;
   }
 }
+
+
+/* ===== IVORY PALETTE SECTION 7 ===== */
+.section7__eyebrow,
+.section7__title,
+.section7__counter {
+  color: #f7e8d0;
+}
+
+.section7__slide {
+  border-color: #ead3b2;
+  box-shadow:
+    0 18px 38px rgba(35, 3, 3, 0.4),
+    0 0 0 1px rgba(247, 232, 208, 0.18);
+}
+
+.section7__arrow {
+  border-color: #ead3b2;
+  background: rgba(247, 232, 208, 0.06);
+  color: #f4dfc2;
+}
+
+.section7__arrow:hover {
+  background: rgba(247, 232, 208, 0.16);
+}
+
+.section7__dot {
+  background: rgba(247, 232, 208, 0.3);
+}
+
+.section7__dot.is-active {
+  background: #f4dfc2;
+}
+/* ===== END IVORY PALETTE SECTION 7 ===== */

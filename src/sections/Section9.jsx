@@ -74,9 +74,7 @@ export default function Section9() {
               }
               onClick={() => togglePanel('gift')}
             >
-              <span className="section9__actionIcon">
-                🎁
-              </span>
+              <span className="section9__actionIcon" aria-hidden="true">✦</span>
               <span>Kirim Kado</span>
             </button>
 
@@ -129,9 +127,7 @@ export default function Section9() {
               }
               onClick={() => togglePanel('money')}
             >
-              <span className="section9__actionIcon">
-                💝
-              </span>
+              <span className="section9__actionIcon" aria-hidden="true">♡</span>
               <span>Amplop Online</span>
             </button>
 

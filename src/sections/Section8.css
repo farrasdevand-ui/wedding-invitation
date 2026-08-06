@@ -337,3 +337,77 @@
     min-height: 76px;
   }
 }
+
+
+/* ===== IVORY PALETTE SECTION 8 ===== */
+.section8__eyebrow,
+.section8__subtitle,
+.section8__ornament b {
+  color: #f1dcc0;
+}
+
+.section8__title {
+  color: #fff1dd;
+}
+
+.section8__ornament span {
+  background: rgba(247, 232, 208, 0.72);
+}
+
+.section8__form,
+.section8__success {
+  border-color: rgba(247, 232, 208, 0.34);
+}
+
+.section8__field label,
+.section8__field legend {
+  color: #f5e3cb;
+}
+
+.section8__field input,
+.section8__field textarea,
+.section8__choice,
+.section8__guestCounter {
+  border-color: rgba(247, 232, 208, 0.44);
+}
+
+.section8__field input:focus,
+.section8__field textarea:focus {
+  border-color: #f1dcc0;
+  box-shadow: 0 0 0 3px rgba(247, 232, 208, 0.12);
+}
+
+.section8__choice {
+  color: #f0d9b9 !important;
+}
+
+.section8__choice.is-active {
+  border-color: #f5e4cc;
+  background: #f0ddc1;
+  color: #6a1815 !important;
+}
+
+.section8__guestCounter button {
+  border-color: #ecd3b1;
+  color: #f5dfc2;
+}
+
+.section8__primaryButton {
+  background: #f0ddc1;
+  color: #681815;
+}
+
+.section8__primaryButton:hover {
+  background: #f8ead6;
+}
+
+.section8__successIcon {
+  border-color: #ead2af;
+  color: #f5dfc2;
+}
+
+.section8__success h3,
+.section8__success p {
+  color: #fff0da;
+}
+/* ===== END IVORY PALETTE SECTION 8 ===== */
