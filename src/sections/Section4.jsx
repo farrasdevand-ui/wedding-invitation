@@ -1,5 +1,6 @@
-import './Section4.css'
-import bridePhoto from '../assets/section4/foto_4.jpg'
+import ReferenceDecorations from "../components/ReferenceDecorations";
+import "./Section4.css";
+import bridePhoto from "../assets/section4/foto_4.jpg";
 
 export default function Section4() {
   return (
@@ -8,10 +9,9 @@ export default function Section4() {
       className="invitation-section section4"
       style={{ backgroundImage: "url('/assets/BG_4.png')" }}
     >
+      <ReferenceDecorations variant="bride" />
       <div className="section4__content">
-        <h3 className="section4__title reveal-up">
-          BISMILLAHIRRAHMANIRRAHIM
-        </h3>
+        <h3 className="section4__title reveal-up">BISMILLAHIRRAHMANIRRAHIM</h3>
 
         <p className="section4__subtitle reveal-up">
           Maha suci Allah yang telah menciptakan
@@ -80,5 +80,5 @@ export default function Section4() {
         </a>
       </div>
     </section>
-  )
+  );
 }
