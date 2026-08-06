@@ -15,12 +15,11 @@
 .section9__overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(82, 6, 8, 0.1),
-      rgba(52, 2, 4, 0.26)
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(82, 6, 8, 0.1),
+    rgba(52, 2, 4, 0.26)
+  );
   pointer-events: none;
 }
 
@@ -52,10 +51,7 @@
 .section9__title {
   margin: 0 auto;
   max-width: 360px;
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(27px, 6.5vw, 39px);
   font-weight: 400;
   line-height: 1.2;
@@ -110,10 +106,7 @@
   border-radius: 12px;
   background: rgba(110, 18, 18, 0.08);
   color: #dcb04d;
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 19px;
   cursor: pointer;
   transition:
@@ -175,10 +168,7 @@
 
 .section9__thanks {
   margin: 22px 0 0;
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 18px;
   font-style: italic;
   color: #f6e5c7;
@@ -207,19 +197,13 @@
 
 .section9__footerLogoTop {
   font-size: 26px;
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 
 .section9__footerLogoBottom {
   margin-top: -2px;
   font-size: 22px;
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 
 .section9__footerLinks {
@@ -310,7 +294,6 @@
     font-size: 10px;
   }
 }
-
 
 /* ===== SECTION 9 FINAL PROPORTION ===== */
 
@@ -465,7 +448,6 @@
 }
 
 /* ===== END SECTION 9 FINAL PROPORTION ===== */
-
 
 /* ===== IVORY PALETTE SECTION 9 ===== */
 .section9__eyebrow,

@@ -6,7 +6,7 @@
   justify-content: center;
   padding: 40px 20px 56px;
   background-color: #732925;
-  background-image: url("/images/cover-bg.png");
+  background-image: url("/images/cover-bg.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -299,7 +299,7 @@
   position: absolute;
   inset: 0;
   background-color: #f6efe8;
-  background-image: url("/images/section-2-bg.png");
+  background-image: url("/images/section-2-bg.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -338,7 +338,7 @@
   inset: 14% 17% 13%;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.4);
-  background-image: url("/images/section-2-photo.jpg");
+  background-image: url("/images/section-2-photo.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -349,7 +349,7 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  background-image: url("/images/section-2-frame.png");
+  background-image: url("/images/section-2-frame.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1475,7 +1475,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url("/images/section-3-bg.png");
+  background-image: url("/images/section-3-bg.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1648,7 +1648,7 @@
 }
 
 .blessing-background {
-  background-image: url("/images/section-3-bg.png");
+  background-image: url("/images/section-3-bg.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1665,7 +1665,7 @@
 }
 
 .blessing-bird {
-  content: url("/images/section-3-bird.png");
+  content: url("/images/section-3-bird.webp");
 }
 
 /* ===== SECTION 3 TEXT & BIRD REFINEMENT ===== */
@@ -2141,7 +2141,7 @@
 
 .wedding-hero-section .portrait-frame-decoration {
   inset: -3% -5% -4% !important;
-  background-image: url("/reference-assets/reference-frame.png") !important;
+  background-image: url("/reference-assets/reference-frame.webp") !important;
   background-size: contain !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -2363,7 +2363,7 @@
 
 /*
  * Bunga dan pepohonan sudah menjadi bagian dari
- * section-2-bg.png. Background asli digerakkan pelan
+ * section-2-bg.webp. Background asli digerakkan pelan
  * supaya terasa hidup tanpa menambahkan gambar kotak.
  */
 .wedding-hero-section .wedding-hero-background {

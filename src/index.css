@@ -13,7 +13,7 @@ body {
   min-height: 100svh;
   margin: 0;
   background: #e8e1dc;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: Georgia, "Times New Roman", serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }

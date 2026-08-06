@@ -8,25 +8,25 @@ const DECORATIONS = {
   bride: [
     {
       className: "reference-tree reference-tree-sukun",
-      src: "/reference-assets/decoration-suk.png",
+      src: "/reference-assets/decoration-suk.webp",
     },
     {
       className: "reference-static-bird reference-bride-bird",
-      src: "/reference-assets/bird-decoration-1.png",
+      src: "/reference-assets/bird-decoration-1.webp",
     },
   ],
   groom: [
     {
       className: "reference-tree reference-tree-palm",
-      src: "/reference-assets/decoration-pal.png",
+      src: "/reference-assets/decoration-pal.webp",
     },
     {
       className: "reference-static-bird reference-groom-bird",
-      src: "/reference-assets/bird-decoration-2.png",
+      src: "/reference-assets/bird-decoration-2.webp",
     },
     {
       className: "reference-peacocks",
-      src: "/reference-assets/decoration-mer.png",
+      src: "/reference-assets/decoration-mer.webp",
     },
   ],
 };
@@ -45,6 +45,8 @@ export default function ReferenceDecorations({ variant }) {
     >
       {decorations.map((decoration) => (
         <img
+          loading="lazy"
+          decoding="async"
           key={decoration.src}
           className={decoration.className}
           src={decoration.src}

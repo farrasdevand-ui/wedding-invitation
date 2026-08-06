@@ -1,32 +1,28 @@
-import { useState } from 'react'
-import './Section9.css'
-import section9Background from '../assets/section9/BG_4.png'
+import { useState } from "react";
+import "./Section9.css";
+import section9Background from "../assets/section9/BG_4.webp";
 
 export default function Section9() {
-  const [openPanel, setOpenPanel] = useState(null)
-  const [copiedKey, setCopiedKey] = useState('')
+  const [openPanel, setOpenPanel] = useState(null);
+  const [copiedKey, setCopiedKey] = useState("");
 
   const togglePanel = (panelName) => {
-    setOpenPanel((current) =>
-      current === panelName ? null : panelName,
-    )
-    setCopiedKey('')
-  }
+    setOpenPanel((current) => (current === panelName ? null : panelName));
+    setCopiedKey("");
+  };
 
   const copyText = async (value, key) => {
     try {
-      await navigator.clipboard.writeText(value)
-      setCopiedKey(key)
+      await navigator.clipboard.writeText(value);
+      setCopiedKey(key);
 
       window.setTimeout(() => {
-        setCopiedKey((current) =>
-          current === key ? '' : current,
-        )
-      }, 1800)
+        setCopiedKey((current) => (current === key ? "" : current));
+      }, 1800);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-  }
+  };
 
   return (
     <section
@@ -40,25 +36,19 @@ export default function Section9() {
 
       <div className="section9__content">
         <div className="section9__main reveal-up">
-          <p className="section9__eyebrow">
-            HADIAH & KADO
-          </p>
+          <p className="section9__eyebrow">HADIAH & KADO</p>
 
           <h2 className="section9__title">
-            Kehadiran dan doa restu dari Bapak/Ibu/Sdr
-            merupakan kebahagiaan yang tak ternilai bagi kami.
+            Kehadiran dan doa restu dari Bapak/Ibu/Sdr merupakan kebahagiaan
+            yang tak ternilai bagi kami.
           </h2>
 
           <p className="section9__subtitle">
-            Namun apabila memberi merupakan cara untuk berbagi
-            bahagia, kami menerimanya dengan penuh syukur dan
-            terima kasih.
+            Namun apabila memberi merupakan cara untuk berbagi bahagia, kami
+            menerimanya dengan penuh syukur dan terima kasih.
           </p>
 
-          <div
-            className="section9__ornament"
-            aria-hidden="true"
-          >
+          <div className="section9__ornament" aria-hidden="true">
             <span />
             <b>◇</b>
             <span />
@@ -68,52 +58,37 @@ export default function Section9() {
             <button
               type="button"
               className={
-                openPanel === 'gift'
-                  ? 'section9__actionButton is-active'
-                  : 'section9__actionButton'
+                openPanel === "gift"
+                  ? "section9__actionButton is-active"
+                  : "section9__actionButton"
               }
-              onClick={() => togglePanel('gift')}
+              onClick={() => togglePanel("gift")}
             >
-              <span className="section9__actionIcon" aria-hidden="true">✦</span>
+              <span className="section9__actionIcon" aria-hidden="true">
+                ✦
+              </span>
               <span>Kirim Kado</span>
             </button>
 
-            {openPanel === 'gift' && (
+            {openPanel === "gift" && (
               <div className="section9__card">
-                <p className="section9__cardLabel">
-                  Nama Penerima
-                </p>
-                <p className="section9__cardValue">
-                  annisa
-                </p>
+                <p className="section9__cardLabel">Nama Penerima</p>
+                <p className="section9__cardValue">annisa</p>
 
-                <p className="section9__cardLabel">
-                  Alamat Pengiriman
-                </p>
-                <p className="section9__cardValue">
-                  padang panjang
-                </p>
+                <p className="section9__cardLabel">Alamat Pengiriman</p>
+                <p className="section9__cardValue">padang panjang</p>
 
-                <p className="section9__cardLabel">
-                  Nomor HP
-                </p>
-                <p className="section9__cardValue">
-                  089610173729
-                </p>
+                <p className="section9__cardLabel">Nomor HP</p>
+                <p className="section9__cardValue">089610173729</p>
 
                 <button
                   type="button"
                   className="section9__copyButton"
-                  onClick={() =>
-                    copyText(
-                      '089610173729',
-                      'gift-phone',
-                    )
-                  }
+                  onClick={() => copyText("089610173729", "gift-phone")}
                 >
-                  {copiedKey === 'gift-phone'
-                    ? 'Nomor berhasil disalin'
-                    : 'Salin Nomor HP'}
+                  {copiedKey === "gift-phone"
+                    ? "Nomor berhasil disalin"
+                    : "Salin Nomor HP"}
                 </button>
               </div>
             )}
@@ -121,52 +96,37 @@ export default function Section9() {
             <button
               type="button"
               className={
-                openPanel === 'money'
-                  ? 'section9__actionButton is-active'
-                  : 'section9__actionButton'
+                openPanel === "money"
+                  ? "section9__actionButton is-active"
+                  : "section9__actionButton"
               }
-              onClick={() => togglePanel('money')}
+              onClick={() => togglePanel("money")}
             >
-              <span className="section9__actionIcon" aria-hidden="true">♡</span>
+              <span className="section9__actionIcon" aria-hidden="true">
+                ♡
+              </span>
               <span>Amplop Online</span>
             </button>
 
-            {openPanel === 'money' && (
+            {openPanel === "money" && (
               <div className="section9__card">
-                <p className="section9__cardLabel">
-                  Bank / E-Wallet
-                </p>
-                <p className="section9__cardValue">
-                  Sea Bank
-                </p>
+                <p className="section9__cardLabel">Bank / E-Wallet</p>
+                <p className="section9__cardValue">Sea Bank</p>
 
-                <p className="section9__cardLabel">
-                  Nomor Rekening
-                </p>
-                <p className="section9__cardValue">
-                  901637356405
-                </p>
+                <p className="section9__cardLabel">Nomor Rekening</p>
+                <p className="section9__cardValue">901637356405</p>
 
-                <p className="section9__cardLabel">
-                  Atas Nama
-                </p>
-                <p className="section9__cardValue">
-                  Rihadatul Aisya Putri
-                </p>
+                <p className="section9__cardLabel">Atas Nama</p>
+                <p className="section9__cardValue">Rihadatul Aisya Putri</p>
 
                 <button
                   type="button"
                   className="section9__copyButton"
-                  onClick={() =>
-                    copyText(
-                      '901637356405',
-                      'money-account',
-                    )
-                  }
+                  onClick={() => copyText("901637356405", "money-account")}
                 >
-                  {copiedKey === 'money-account'
-                    ? 'Nomor rekening berhasil disalin'
-                    : 'Salin Nomor Rekening'}
+                  {copiedKey === "money-account"
+                    ? "Nomor rekening berhasil disalin"
+                    : "Salin Nomor Rekening"}
                 </button>
               </div>
             )}
@@ -183,27 +143,17 @@ export default function Section9() {
           </p>
 
           <div className="section9__footerLogo">
-            <span className="section9__footerLogoTop">
-              dua
-            </span>
-            <span className="section9__footerLogoBottom">
-              jiwa
-            </span>
+            <span className="section9__footerLogoTop">dua</span>
+            <span className="section9__footerLogoBottom">jiwa</span>
           </div>
 
           <div className="section9__footerLinks">
-            <a
-              href="https://duajiwa.com"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://duajiwa.com" target="_blank" rel="noreferrer">
               <span>◎</span>
               <span>duajiwa.com</span>
             </a>
 
-            <span className="section9__footerDivider">
-              |
-            </span>
+            <span className="section9__footerDivider">|</span>
 
             <a
               href="https://wa.me/6282220700245"
@@ -214,9 +164,7 @@ export default function Section9() {
               <span>0822 2070 0245</span>
             </a>
 
-            <span className="section9__footerDivider">
-              |
-            </span>
+            <span className="section9__footerDivider">|</span>
 
             <a
               href="https://instagram.com/duajiwa.invitation"
@@ -230,5 +178,5 @@ export default function Section9() {
         </footer>
       </div>
     </section>
-  )
+  );
 }

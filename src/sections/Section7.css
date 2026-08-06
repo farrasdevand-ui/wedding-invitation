@@ -16,12 +16,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(80, 10, 10, 0.02) 0%,
-      rgba(55, 6, 6, 0.2) 100%
-    );
+  background: radial-gradient(
+    circle at center,
+    rgba(80, 10, 10, 0.02) 0%,
+    rgba(55, 6, 6, 0.2) 100%
+  );
   pointer-events: none;
 }
 
@@ -53,11 +52,7 @@
 
 .section7__title {
   margin: 0;
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-size: clamp(30px, 8vw, 40px);
   font-weight: 400;
   line-height: 1;
@@ -89,11 +84,7 @@
   overflow: hidden;
   opacity: var(--gallery-opacity);
   filter: blur(var(--gallery-blur));
-  transform:
-    translate(-50%, -50%)
-    translateX(
-      calc(var(--gallery-offset) * 68%)
-    )
+  transform: translate(-50%, -50%) translateX(calc(var(--gallery-offset) * 68%))
     scale(var(--gallery-scale));
   box-shadow:
     0 18px 38px rgba(35, 3, 3, 0.4),
@@ -139,10 +130,7 @@
   border-radius: 50%;
   background: rgba(73, 11, 11, 0.32);
   color: #e5ba43;
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 31px;
   line-height: 1;
   cursor: pointer;
@@ -248,7 +236,6 @@
     transition: none;
   }
 }
-
 
 /* ===== IVORY PALETTE SECTION 7 ===== */
 .section7__eyebrow,
