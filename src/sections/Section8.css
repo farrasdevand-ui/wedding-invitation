@@ -15,12 +15,11 @@
 .section8__overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(70, 4, 7, 0.12),
-      rgba(48, 2, 4, 0.38)
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(70, 4, 7, 0.12),
+    rgba(48, 2, 4, 0.38)
+  );
   pointer-events: none;
 }
 
@@ -51,10 +50,7 @@
 
 .section8__title {
   margin: 0;
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(29px, 7.6vw, 38px);
   font-weight: 400;
   line-height: 1.08;
@@ -272,10 +268,7 @@
 
 .section8__success h3 {
   margin: 0 0 12px;
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 34px;
   font-weight: 500;
   color: #fff0d8;
@@ -337,7 +330,6 @@
     min-height: 76px;
   }
 }
-
 
 /* ===== IVORY PALETTE SECTION 8 ===== */
 .section8__eyebrow,
@@ -411,3 +403,359 @@
   color: #fff0da;
 }
 /* ===== END IVORY PALETTE SECTION 8 ===== */
+
+/* ===== SUPABASE RSVP MESSAGES START ===== */
+
+.section8 {
+  overflow-y: auto;
+}
+
+.section8__content {
+  min-height: 100svh;
+  height: auto;
+}
+
+.section8__primaryButton:disabled {
+  opacity: 0.58;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
+}
+
+.section8__characterCount {
+  display: block;
+  margin-top: 5px;
+  color: rgba(247, 232, 208, 0.62);
+  font-size: 10px;
+  text-align: right;
+}
+
+.section8__error {
+  margin: 0 0 13px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 205, 198, 0.5);
+  border-radius: 11px;
+  background: rgba(101, 9, 13, 0.58);
+  color: #ffe0dc;
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.section8__messages {
+  width: 100%;
+  max-width: 360px;
+  margin-top: 24px;
+  padding: 22px 18px;
+  border: 1px solid rgba(247, 232, 208, 0.34);
+  border-radius: 22px;
+  background: rgba(82, 10, 12, 0.34);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 18px 38px rgba(40, 2, 4, 0.22);
+}
+
+.section8__messagesHeader {
+  margin-bottom: 17px;
+  text-align: center;
+}
+
+.section8__messagesHeader > p {
+  margin: 0 0 7px;
+  color: #f1dcc0;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.section8__messagesHeader h3 {
+  margin: 0;
+  color: #fff1dd;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.section8__messageList {
+  max-height: 350px;
+  padding-right: 3px;
+  display: grid;
+  gap: 10px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(240, 221, 193, 0.45) transparent;
+}
+
+.section8__messageCard {
+  padding: 13px 14px;
+  border: 1px solid rgba(247, 232, 208, 0.22);
+  border-radius: 14px;
+  background: rgba(255, 240, 221, 0.07);
+  text-align: left;
+}
+
+.section8__messageMeta {
+  margin-bottom: 7px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section8__messageMeta strong {
+  min-width: 0;
+  color: #fff0da;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.section8__messageMeta time {
+  flex: 0 0 auto;
+  color: rgba(247, 232, 208, 0.58);
+  font-size: 9px;
+  line-height: 1.35;
+  text-align: right;
+}
+
+.section8__messageCard > p {
+  margin: 0;
+  color: #f4ddbd;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.section8__messagesStatus {
+  margin: 0;
+  color: #f3dab5;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.section8__messagesStatus p {
+  margin: 0 0 10px;
+}
+
+.section8__messagesStatus button {
+  min-height: 32px;
+  padding: 0 14px;
+  border: 1px solid rgba(247, 232, 208, 0.45);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff0da;
+  font-family: Georgia, serif;
+  cursor: pointer;
+}
+
+@media (max-width: 380px) {
+  .section8__messages {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .section8__messageMeta {
+    display: block;
+  }
+
+  .section8__messageMeta time {
+    display: block;
+    margin-top: 3px;
+    text-align: left;
+  }
+}
+
+/* ===== SUPABASE RSVP MESSAGES END ===== */
+
+/* ===== SECTION 8 TWO SCREEN START ===== */
+
+/*
+ * Section 8 bukan lagi satu snap area panjang.
+ * Wrapper hanya menampung dua snap screen.
+ */
+.invitation-section.section8 {
+  width: 100%;
+  height: auto;
+  min-height: 200svh;
+  overflow: visible !important;
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
+
+  /*
+   * Background asli diulang per tinggi viewport
+   * sehingga tidak meregang sepanjang dua layar.
+   */
+  background-position: top center;
+  background-repeat: repeat-y;
+  background-size: 100% 100svh;
+}
+
+/*
+ * Content tidak lagi memiliki padding global.
+ * Masing-masing panel mengatur layout sendiri.
+ */
+.section8__content {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  min-height: 200svh;
+  padding: 0;
+  display: block;
+}
+
+/*
+ * Dua snap point:
+ * 1. form RSVP
+ * 2. Ucapan & Doa
+ */
+.section8__panel {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/*
+ * Form tetap berada pada satu layar.
+ * Jika tinggi perangkat pendek, yang scroll hanya
+ * isi panel—bukan langsung lompat ke Section 9.
+ */
+.section8__panel--form {
+  display: block;
+}
+
+.section8__panelScroller {
+  width: 100%;
+  max-width: 430px;
+  height: 100svh;
+  margin: 0 auto;
+  padding: 48px 20px 86px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  overscroll-behavior-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.section8__panelScroller::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+ * Layar kedua khusus komentar.
+ */
+.section8__panel--messages {
+  width: 100%;
+  max-width: 430px;
+  height: 100svh;
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 48px 20px 70px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.section8__panel--messages .section8__messagesHeader {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 18px;
+}
+
+/*
+ * Area komentar memakai ruang tersisa.
+ * User bisa membaca seluruh komentar tanpa
+ * mendorongnya langsung ke section berikutnya.
+ */
+.section8__panel--messages .section8__messageList {
+  width: 100%;
+  max-width: 360px;
+  min-height: 0;
+  max-height: none;
+  flex: 1;
+
+  padding: 12px;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  border: 1px solid rgba(247, 232, 208, 0.3);
+  border-radius: 18px;
+  background: rgba(82, 10, 12, 0.34);
+
+  overscroll-behavior-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(240, 221, 193, 0.5) transparent;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.section8__panel--messages .section8__messagesStatus {
+  width: 100%;
+  max-width: 360px;
+  margin: auto;
+  padding: 24px 18px;
+
+  border: 1px solid rgba(247, 232, 208, 0.3);
+  border-radius: 18px;
+  background: rgba(82, 10, 12, 0.34);
+}
+
+/*
+ * Overlay harus menutup dua layar penuh.
+ */
+.section8__overlay {
+  position: absolute;
+  inset: 0;
+  min-height: 200svh;
+}
+
+/*
+ * Pada viewport sempit form tetap memiliki
+ * ruang horizontal yang cukup.
+ */
+@media (max-width: 380px) {
+  .section8__panelScroller,
+  .section8__panel--messages {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/*
+ * Compact mode tetap berlaku, tetapi tidak mengubah
+ * panel menjadi auto-height sehingga snap tetap stabil.
+ */
+@media (max-height: 760px) {
+  .section8__panelScroller {
+    padding-top: 34px;
+    padding-bottom: 58px;
+  }
+
+  .section8__panel--messages {
+    padding-top: 34px;
+    padding-bottom: 54px;
+  }
+}
+
+/* ===== SECTION 8 TWO SCREEN END ===== */

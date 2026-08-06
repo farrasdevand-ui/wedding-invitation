@@ -48,11 +48,7 @@
   text-shadow: 0 3px 12px rgba(40, 0, 0, 0.55);
   max-width: 390px;
   margin: 0 auto 18px;
-  font-family:
-    'Cormorant Garamond',
-    Georgia,
-    'Times New Roman',
-    serif;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-size: clamp(43px, 11.2vw, 54px);
   font-weight: 400;
   line-height: 1;
@@ -168,7 +164,6 @@
   }
 }
 
-
 /* ===== SECTION 5 FINAL COMPOSITION ===== */
 
 /* Pastikan Section 5 kembali penuh satu layar */
@@ -274,7 +269,6 @@
 
 /* ===== END SECTION 5 FINAL COMPOSITION ===== */
 
-
 /* ===== SECTION 5 SPACING REFINEMENT ===== */
 
 /* Beri ruang lebih lega antar foto, nama, dan orang tua */
@@ -305,10 +299,6 @@
 }
 
 /* ===== END SECTION 5 SPACING REFINEMENT ===== */
-
-
-
-
 
 /* ===== SECTION 5 PEACOCK DECORATION ===== */
 

@@ -1,13 +1,13 @@
 import ReferenceDecorations from "../components/ReferenceDecorations";
 import "./Section4.css";
-import bridePhoto from "../assets/section4/foto_4.jpg";
+import bridePhoto from "../assets/section4/foto_4.webp";
 
 export default function Section4() {
   return (
     <section
       id="section-4"
       className="invitation-section section4"
-      style={{ backgroundImage: "url('/assets/BG_4.png')" }}
+      style={{ backgroundImage: "url('/assets/BG_4.webp')" }}
     >
       <ReferenceDecorations variant="bride" />
       <div className="section4__content">
@@ -23,6 +23,8 @@ export default function Section4() {
 
         <div className="section4__photoFrame reveal-up">
           <img
+            loading="lazy"
+            decoding="async"
             src={bridePhoto}
             alt="Annisa Rahma Zikra"
             className="section4__photo"

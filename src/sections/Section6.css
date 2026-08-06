@@ -2,70 +2,70 @@
   position: relative;
   width: 100%;
   min-height: 100svh;
-  display: flex;
-  justify-content: center;
+  overflow: hidden;
   background-color: #681813;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  overflow: hidden;
+  color: #4a221a;
 }
 
-.section6__header {
+/*
+ * Satu panel mengikuti area aman bingkai cream.
+ * Header dan konten tidak lagi memiliki koordinat
+ * absolut yang terpisah.
+ */
+.section6__panel {
   position: absolute;
-  top: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(92%, 360px);
-  z-index: 3;
-  text-align: center;
-}
-
-.section6__heading {
-  margin: 0 0 10px;
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    "Times New Roman",
-    serif;
-  font-size: clamp(36px, 9vw, 48px);
-  font-weight: 500;
-  line-height: 1;
-  color: #f8e6cf;
-  text-shadow: 0 3px 14px rgba(55, 8, 8, 0.6);
-}
-
-.section6__subtitle {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.4;
-  color: #fff3e6;
-  text-shadow: 0 2px 8px rgba(55, 8, 8, 0.55);
-}
-
-.section6__content {
-  position: relative;
+  top: 12.4%;
+  right: 0;
+  bottom: 20%;
+  left: 0;
   z-index: 2;
-  width: 69%;
-  max-width: 300px;
-  min-height: 100svh;
+
+  width: min(65%, 350px);
   margin: 0 auto;
-  padding:
-    clamp(208px, 24svh, 230px)
-    0
-    clamp(84px, 10svh, 98px);
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+
   color: #4a221a;
+  text-align: center;
+}
+
+/* Header sekarang berada dalam flow panel. */
+
+/*
+ * Konten tetap di flow yang sama.
+ * Margin atas menjadi jarak desain dari header,
+ * bukan koordinat posisi terhadap viewport.
+ */
+.section6__content {
+  position: relative;
+  top: auto;
+  left: auto;
+  z-index: auto;
+
+  width: 100%;
+  margin: clamp(82px, 8.5svh, 118px) 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  color: #4a221a;
+  text-align: center;
+  transform: none;
 }
 
 .section6__logo {
   display: block;
-  width: 118px;
-  max-height: 96px;
-  margin: 0 auto 22px;
+  width: clamp(102px, 20vw, 135px);
+  height: auto;
+  max-height: 76px;
+  margin: 0 auto 11px;
   object-fit: contain;
 }
 
@@ -74,89 +74,97 @@
 }
 
 .section6__eventTitle {
-  margin: 0 0 12px;
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    "Times New Roman",
-    serif;
-  font-size: clamp(34px, 8.8vw, 46px);
+  margin: 0 0 7px;
+  color: #472019;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 6vw, 40px);
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.02em;
-  color: #472019;
 }
 
 .section6__date {
-  margin: 0 0 8px;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.35;
+  margin: 0 0 4px;
   color: #331a16;
+  font-size: clamp(12px, 2.3vw, 14.5px);
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .section6__time {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.45;
   color: #3e241e;
+  font-size: clamp(11px, 2.1vw, 13.5px);
+  line-height: 1.35;
 }
 
 .section6__ornament {
   width: 100%;
-  margin: 24px 0 24px;
+  margin: clamp(14px, 1.6svh, 19px) 0;
   display: flex;
   align-items: center;
-  gap: 14px;
+  justify-content: center;
+  gap: 12px;
 }
 
 .section6__ornamentLine {
   flex: 1;
-  height: 2px;
-  background: rgba(84, 44, 35, 0.9);
+  height: 1.5px;
+  background: #64362d;
 }
 
 .section6__ornamentHeart {
-  font-size: 20px;
+  color: #582119;
+  font-size: 18px;
   line-height: 1;
-  color: #4f1f18;
 }
 
 .section6__venue {
   width: 100%;
-  margin-top: 24px;
+  margin-top: clamp(11px, 1.3svh, 16px);
 }
 
 .section6__venueLabel {
-  margin: 0 0 9px;
-  font-size: 15px;
+  margin: 0 0 5px;
+  color: #331a16;
+  font-size: clamp(12px, 2.3vw, 14.5px);
   font-weight: 700;
   line-height: 1.3;
-  color: #331a16;
 }
 
 .section6__address {
-  margin: 0;
-  font-size: 13.2px;
-  line-height: 1.52;
+  width: 100%;
+  margin: 0 auto;
   color: #43241d;
+  font-size: clamp(10px, 1.9vw, 12px);
+  line-height: 1.36;
+}
+
+.section6__addressLine {
+  display: block;
 }
 
 .section6__mapsButton {
-  min-height: 44px;
-  margin: 20px auto 0;
-  padding: 0 20px;
+  min-height: 37px;
+  margin: 10px auto 0;
+  padding: 0 17px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border: 1.8px solid #5b2820;
+
+  border: 1.7px solid #5b2820;
   border-radius: 999px;
-  background: transparent;
+  background: rgba(255, 244, 229, 0.58);
   color: #452018;
-  font-size: 14px;
+
+  font-size: 11.5px;
   font-weight: 700;
   text-decoration: none;
+
+  box-shadow: 0 7px 15px rgba(70, 24, 18, 0.12);
+
   transition:
     transform 180ms ease,
     background-color 180ms ease,
@@ -164,9 +172,9 @@
 }
 
 .section6__mapsButton:hover {
+  background: rgba(255, 244, 229, 0.82);
+  box-shadow: 0 9px 19px rgba(70, 24, 18, 0.16);
   transform: translateY(-2px);
-  background: rgba(103, 38, 29, 0.07);
-  box-shadow: 0 8px 18px rgba(70, 24, 18, 0.1);
 }
 
 .section6__mapsButton:active {
@@ -179,353 +187,143 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 380px) {
-  .section6__header {
-    top: 66px;
-    width: min(92%, 340px);
-  }
-
-  .section6__heading {
-    font-size: 33px;
-  }
-
-  .section6__subtitle {
-    font-size: 12px;
+/*
+ * Layar menengah hanya mengubah skala dan jarak.
+ * Tidak ada lagi koordinat top terpisah.
+ */
+@media (max-height: 950px) {
+  .section6__panel {
+    top: 11.5%;
+    bottom: 14%;
+    width: min(67%, 325px);
   }
 
   .section6__content {
-    width: 69%;
-    max-width: 280px;
-    padding-top: 198px;
-    padding-bottom: 78px;
+    margin-top: clamp(55px, 6.5svh, 70px);
   }
 
   .section6__logo {
-    width: 106px;
-    max-height: 86px;
-    margin-bottom: 20px;
+    width: 91px;
+    max-height: 55px;
+    margin-bottom: 7px;
   }
 
   .section6__eventTitle {
-    font-size: 32px;
-  }
-
-  .section6__date {
-    font-size: 14px;
-  }
-
-  .section6__time {
-    font-size: 13px;
-  }
-
-  .section6__ornament {
-    margin: 22px 0;
-  }
-
-  .section6__venueLabel {
-    font-size: 14px;
-  }
-
-  .section6__address {
-    font-size: 12.3px;
-  }
-}
-
-@media (max-height: 760px) {
-  .section6__header {
-    top: 58px;
-  }
-
-  .section6__heading {
-    font-size: 31px;
-    margin-bottom: 8px;
-  }
-
-  .section6__subtitle {
-    font-size: 11.5px;
-  }
-
-  .section6__content {
-    padding-top: 182px;
-    padding-bottom: 66px;
-  }
-
-  .section6__logo {
-    width: 92px;
-    max-height: 72px;
-    margin-bottom: 16px;
-  }
-
-  .section6__eventTitle {
-    font-size: 30px;
-    margin-bottom: 8px;
-  }
-
-  .section6__date {
-    font-size: 12.5px;
     margin-bottom: 5px;
+    font-size: 28px;
+  }
+
+  .section6__date {
+    margin-bottom: 2px;
+    font-size: 11.3px;
   }
 
   .section6__time {
-    font-size: 11.8px;
+    font-size: 10.6px;
   }
 
   .section6__ornament {
-    margin: 18px 0;
-    gap: 11px;
-  }
-
-  .section6__ornamentHeart {
-    font-size: 17px;
+    margin: 10px 0;
   }
 
   .section6__venue {
-    margin-top: 18px;
+    margin-top: 8px;
   }
 
   .section6__venueLabel {
-    font-size: 12.5px;
-    margin-bottom: 6px;
+    margin-bottom: 3px;
+    font-size: 11.3px;
   }
 
   .section6__address {
-    font-size: 11.2px;
-    line-height: 1.45;
+    font-size: 9.4px;
+    line-height: 1.3;
   }
 
   .section6__mapsButton {
-    min-height: 38px;
-    margin-top: 16px;
-    padding: 0 14px;
-    font-size: 12px;
-  }
-}
-
-
-/* ===== SECTION 6 FINAL BALANCE ===== */
-
-/* Sesuaikan isi dengan lebar bidang cream */
-.section6 .section6__content {
-  width: 57%;
-  max-width: 246px;
-  padding-top: clamp(180px, 21svh, 194px);
-  padding-bottom: 62px;
-}
-
-/* Rumah Gadang lebih dominan tetapi tetap proporsional */
-.section6 .section6__logo {
-  width: 126px;
-  max-width: 72%;
-  max-height: 90px;
-  margin: 0 auto 12px;
-}
-
-/* Typography dibuat lebih seimbang */
-.section6 .section6__eventTitle {
-  margin-bottom: 8px;
-  font-size: clamp(34px, 8.5vw, 40px);
-  line-height: 1;
-}
-
-.section6 .section6__date {
-  margin-bottom: 4px;
-  font-size: 13px;
-  line-height: 1.3;
-}
-
-.section6 .section6__time {
-  font-size: 12px;
-  line-height: 1.35;
-}
-
-/* Ornamen pemisah Akad dan Resepsi */
-.section6 .section6__ornament {
-  width: 100%;
-  margin: 16px 0 17px;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  filter: none !important;
-}
-
-.section6 .section6__ornamentLine {
-  display: block;
-  flex: 1;
-  height: 1.5px;
-  background: #64362d;
-}
-
-.section6 .section6__ornamentHeart {
-  display: block;
-  font-size: 17px;
-  line-height: 1;
-  color: #582119;
-}
-
-/* Rapikan blok lokasi agar tidak keluar frame */
-.section6 .section6__venue {
-  width: 100%;
-  margin-top: 16px;
-}
-
-.section6 .section6__venueLabel {
-  margin-bottom: 6px;
-  font-size: 13px;
-}
-
-.section6 .section6__address {
-  width: 100%;
-  margin: 0 auto;
-  font-size: 10.8px;
-  line-height: 1.45;
-  overflow-wrap: normal;
-  word-break: normal;
-}
-
-.section6 .section6__mapsButton {
-  min-height: 37px;
-  margin-top: 13px;
-  padding: 0 14px;
-  font-size: 11.5px;
-}
-
-@media (max-width: 380px) {
-  .section6 .section6__content {
-    width: 58%;
-    max-width: 238px;
-    padding-top: 172px;
-    padding-bottom: 56px;
-  }
-
-  .section6 .section6__logo {
-    width: 116px;
-    max-height: 84px;
-    margin-bottom: 10px;
-  }
-
-  .section6 .section6__eventTitle {
-    font-size: 32px;
-  }
-
-  .section6 .section6__address {
+    min-height: 31px;
+    margin-top: 7px;
+    padding: 0 13px;
     font-size: 10.2px;
   }
 }
 
 @media (max-height: 760px) {
-  .section6 .section6__content {
-    padding-top: 158px;
-    padding-bottom: 48px;
+  .section6__panel {
+    top: 10.5%;
+    bottom: 10%;
+    width: min(69%, 295px);
   }
 
-  .section6 .section6__logo {
-    width: 104px;
-    max-height: 76px;
-    margin-bottom: 9px;
+  .section6__content {
+    margin-top: 38px;
   }
 
-  .section6 .section6__eventTitle {
-    margin-bottom: 6px;
-    font-size: 28px;
+  .section6__logo {
+    width: 72px;
+    max-height: 43px;
+    margin-bottom: 4px;
   }
 
-  .section6 .section6__date {
-    font-size: 11.5px;
+  .section6__eventTitle {
+    font-size: 23px;
   }
 
-  .section6 .section6__time {
-    font-size: 10.8px;
-  }
-
-  .section6 .section6__ornament {
-    margin: 12px 0 13px;
-  }
-
-  .section6 .section6__venue {
-    margin-top: 12px;
-  }
-
-  .section6 .section6__address {
+  .section6__date {
     font-size: 9.8px;
-    line-height: 1.38;
   }
 
-  .section6 .section6__mapsButton {
-    min-height: 33px;
-    margin-top: 10px;
+  .section6__time {
+    font-size: 9.2px;
   }
-}
 
-/* ===== END SECTION 6 FINAL BALANCE ===== */
+  .section6__ornament {
+    margin: 7px 0;
+  }
 
-/* Override: perbesar lagi Rumah Gadang */
-.section6 .section6__logo {
-  width: 146px !important;
-  max-width: 82% !important;
-  max-height: 108px !important;
-  margin-bottom: 10px !important;
+  .section6__venue {
+    margin-top: 5px;
+  }
+
+  .section6__venueLabel {
+    font-size: 9.8px;
+  }
+
+  .section6__address {
+    font-size: 8.2px;
+    line-height: 1.24;
+  }
+
+  .section6__mapsButton {
+    min-height: 27px;
+    margin-top: 4px;
+    font-size: 8.8px;
+  }
 }
 
 @media (max-width: 380px) {
-  .section6 .section6__logo {
-    width: 132px !important;
-    max-height: 98px !important;
+  .section6__panel {
+    width: 68%;
   }
 }
 
+/* ===== SECTION 6 TRUE CENTER START ===== */
+
+/*
+ * Audit visual:
+ * seluruh blok Rumah Gadang hingga tombol Maps
+ * masih terlalu tinggi. Struktur internal sudah benar,
+ * jadi blok hanya diturunkan sebagai satu kesatuan.
+ */
+.section6__content {
+  transform: translateY(clamp(88px, 9.5svh, 126px));
+}
+
+/* Viewport sangat pendek perlu pergeseran lebih kecil. */
 @media (max-height: 760px) {
-  .section6 .section6__logo {
-    width: 122px !important;
-    max-height: 90px !important;
+  .section6__content {
+    transform: translateY(54px);
   }
 }
 
-/* Override final: Rumah Gadang dibesarkan lebih jauh */
-.section6 .section6__logo {
-  width: 180px !important;
-  max-width: 92% !important;
-  max-height: 130px !important;
-  margin-bottom: 8px !important;
-}
-
-@media (max-width: 380px) {
-  .section6 .section6__logo {
-    width: 160px !important;
-    max-height: 116px !important;
-    margin-bottom: 8px !important;
-  }
-}
-
-@media (max-height: 760px) {
-  .section6 .section6__logo {
-    width: 142px !important;
-    max-height: 104px !important;
-    margin-bottom: 8px !important;
-  }
-}
-
-/* Perbesar sedikit lagi Rumah Gadang */
-.section6 .section6__logo {
-  width: 195px !important;
-  max-width: 96% !important;
-  max-height: 142px !important;
-  margin-bottom: 6px !important;
-}
-
-@media (max-width: 380px) {
-  .section6 .section6__logo {
-    width: 174px !important;
-    max-height: 126px !important;
-  }
-}
-
-@media (max-height: 760px) {
-  .section6 .section6__logo {
-    width: 152px !important;
-    max-height: 110px !important;
-  }
-}
+/* ===== SECTION 6 TRUE CENTER END ===== */

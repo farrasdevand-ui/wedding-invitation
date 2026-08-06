@@ -1,9 +1,8 @@
-import './Section6.css'
-import bgSection6 from '../assets/section6/bg6.png'
-import rumahGadang from '../assets/section6/rumahgadang.png'
+import "./Section6.css";
+import bgSection6 from "../assets/section6/bg6.webp";
 
 const mapsUrl =
-  'https://www.google.com/maps/search/?api=1&query=Jl.+Rahmah+Elyunusiah+No.40,+Pasar+Usang,+Kecamatan+Padang+Panjang+Barat,+Kota+Padang+Panjang,+Sumatera+Barat'
+  "https://www.google.com/maps/search/?api=1&query=Jl.+Rahmah+Elyunusiah+No.40,+Pasar+Usang,+Kecamatan+Padang+Panjang+Barat,+Kota+Padang+Panjang,+Sumatera+Barat";
 
 function MapPinIcon() {
   return (
@@ -20,15 +19,9 @@ function MapPinIcon() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <circle
-        cx="12"
-        cy="10"
-        r="2.3"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      />
+      <circle cx="12" cy="10" r="2.3" stroke="currentColor" strokeWidth="1.8" />
     </svg>
-  )
+  );
 }
 
 export default function Section6() {
@@ -38,84 +31,61 @@ export default function Section6() {
       className="invitation-section section6"
       style={{ backgroundImage: `url(${bgSection6})` }}
     >
-      <div className="section6__header">
-        <h2 className="section6__heading reveal-up">
-          Save The Date
-        </h2>
+      <div className="section6__panel">
+        <div className="section6__content">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="/reference-assets/rumah-gadang.svg"
+            alt="Rumah Gadang"
+            className="section6__logo reveal-up"
+          />
 
-        <p className="section6__subtitle reveal-up">
-          Yang InsyaAllah akan diselenggarakan pada:
-        </p>
-      </div>
+          <div className="section6__event reveal-up">
+            <h3 className="section6__eventTitle">Akad Nikah</h3>
 
-      <div className="section6__content">
-        <img
-          src={rumahGadang}
-          alt="Rumah Gadang"
-          className="section6__logo reveal-up"
-        />
+            <p className="section6__date">Sabtu, 15 Agustus 2023</p>
 
-        <div className="section6__event reveal-up">
-          <h3 className="section6__eventTitle">
-            Akad Nikah
-          </h3>
+            <p className="section6__time">Pukul 08.00 WIB</p>
+          </div>
 
-          <p className="section6__date">
-            Sabtu, 15 Agustus 2023
-          </p>
+          <div className="section6__ornament" aria-hidden="true">
+            <span className="section6__ornamentLine" />
+            <span className="section6__ornamentHeart">♥</span>
+            <span className="section6__ornamentLine" />
+          </div>
 
-          <p className="section6__time">
-            Pukul 08.00 WIB
-          </p>
-        </div>
+          <div className="section6__event reveal-up">
+            <h3 className="section6__eventTitle">Resepsi</h3>
 
-        <div
-          className="section6__ornament"
-          aria-hidden="true"
-        >
-          <span className="section6__ornamentLine" />
-          <span className="section6__ornamentHeart">♥</span>
-          <span className="section6__ornamentLine" />
-        </div>
+            <p className="section6__date">Sabtu, 15 Agustus 2023</p>
 
-        <div className="section6__event reveal-up">
-          <h3 className="section6__eventTitle">
-            Resepsi
-          </h3>
+            <p className="section6__time">Pukul 11.00 WIB s/d selesai</p>
+          </div>
 
-          <p className="section6__date">
-            Sabtu, 15 Agustus 2023
-          </p>
+          <div className="section6__venue reveal-up">
+            <p className="section6__venueLabel">Bertempat di:</p>
 
-          <p className="section6__time">
-            Pukul 11.00 WIB s/d selesai
-          </p>
-        </div>
+            <p className="section6__address">
+              Jl. Rahmah Elyunusiah No.40,
+              <br />
+              Pasar Usang, Kecamatan Padang Panjang Barat,
+              <br />
+              Kota Padang Panjang, Sumatera Barat
+            </p>
 
-        <div className="section6__venue reveal-up">
-          <p className="section6__venueLabel">
-            Bertempat di:
-          </p>
-
-          <p className="section6__address">
-            Jl. Rahmah Elyunusiah No.40,
-            <br />
-            Pasar Usang, Kecamatan Padang Panjang Barat,
-            <br />
-            Kota Padang Panjang, Sumatera Barat
-          </p>
-
-          <a
-            href={mapsUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="section6__mapsButton"
-          >
-            <MapPinIcon />
-            <span>Buka Maps</span>
-          </a>
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="section6__mapsButton"
+            >
+              <MapPinIcon />
+              <span>Buka Maps</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

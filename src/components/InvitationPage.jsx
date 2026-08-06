@@ -196,62 +196,6 @@ export default function InvitationPage() {
     };
   }, []);
 
-  useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-
-    if (!scrollContainer) {
-      return undefined;
-    }
-
-    let isScrollLocked = false;
-
-    const handleWheel = (event) => {
-      const sections = Array.from(
-        scrollContainer.querySelectorAll(".invitation-section"),
-      );
-
-      if (sections.length < 2 || isScrollLocked || Math.abs(event.deltaY) < 8) {
-        return;
-      }
-
-      event.preventDefault();
-
-      const currentIndex = Math.round(
-        scrollContainer.scrollTop / scrollContainer.clientHeight,
-      );
-
-      const direction = event.deltaY > 0 ? 1 : -1;
-
-      const nextIndex = Math.min(
-        Math.max(currentIndex + direction, 0),
-        sections.length - 1,
-      );
-
-      if (nextIndex === currentIndex) {
-        return;
-      }
-
-      isScrollLocked = true;
-
-      sections[nextIndex].scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-
-      window.setTimeout(() => {
-        isScrollLocked = false;
-      }, 850);
-    };
-
-    scrollContainer.addEventListener("wheel", handleWheel, {
-      passive: false,
-    });
-
-    return () => {
-      scrollContainer.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
-
   const countdownItems = [
     {
       value: timeLeft.days,
@@ -286,35 +230,35 @@ export default function InvitationPage() {
         <div className="wedding-hero-decorations" aria-hidden="true">
           <img
             className="wedding-bottom-piece wedding-bottom-left-tree"
-            src="/reference-assets/decoration-suk.png"
+            src="/reference-assets/decoration-suk.webp"
             alt=""
             draggable="false"
           />
 
           <img
             className="wedding-bottom-piece wedding-bottom-right-tree"
-            src="/reference-assets/decoration-pal.png"
+            src="/reference-assets/decoration-pal.webp"
             alt=""
             draggable="false"
           />
 
           <img
             className="wedding-bottom-piece wedding-bottom-center-peacocks"
-            src="/reference-assets/decoration-mer.png"
+            src="/reference-assets/decoration-mer.webp"
             alt=""
             draggable="false"
           />
 
           <img
             className="wedding-bottom-piece wedding-bottom-left-bird"
-            src="/reference-assets/bird-decoration-1.png"
+            src="/reference-assets/bird-decoration-1.webp"
             alt=""
             draggable="false"
           />
 
           <img
             className="wedding-bottom-piece wedding-bottom-right-bird"
-            src="/reference-assets/bird-decoration-2.png"
+            src="/reference-assets/bird-decoration-2.webp"
             alt=""
             draggable="false"
           />
@@ -384,7 +328,7 @@ export default function InvitationPage() {
           <div className="blessing-bird-wrapper reveal-up reveal-delay-2">
             <img
               className="blessing-bird"
-              src="/images/section-3-bird.png"
+              src="/images/section-3-bird.webp"
               alt=""
               onError={(event) => {
                 event.currentTarget.style.display = "none";
