@@ -1,22 +1,23 @@
-import { useEffect, useRef, useState } from 'react'
-import { invitationConfig } from '../config/invitation'
-import Section4 from '../sections/Section4'
-import Section5 from '../sections/Section5'
-import Section6 from '../sections/Section6'
-import Section7 from '../sections/Section7'
-import Section8 from '../sections/Section8'
-import Section9 from '../sections/Section9'
+import { useEffect, useRef, useState } from "react";
+import FlyingBirds from "./FlyingBirds";
+import { invitationConfig } from "../config/invitation";
+import Section4 from "../sections/Section4";
+import Section5 from "../sections/Section5";
+import Section6 from "../sections/Section6";
+import Section7 from "../sections/Section7";
+import Section8 from "../sections/Section8";
+import Section9 from "../sections/Section9";
 
 function calculateTimeLeft() {
-  const targetDate = new Date(invitationConfig.eventDate).getTime()
-  const difference = Math.max(targetDate - Date.now(), 0)
+  const targetDate = new Date(invitationConfig.eventDate).getTime();
+  const difference = Math.max(targetDate - Date.now(), 0);
 
   return {
     days: Math.floor(difference / (1000 * 60 * 60 * 24)),
     hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
     minutes: Math.floor((difference / (1000 * 60)) % 60),
     seconds: Math.floor((difference / 1000) % 60),
-  }
+  };
 }
 
 function CalendarIcon() {
@@ -49,48 +50,48 @@ function CalendarIcon() {
         strokeLinecap="round"
       />
     </svg>
-  )
+  );
 }
 
 function SaveDateButton() {
   const handleSaveDate = () => {
-    const startDate = new Date(invitationConfig.eventDate)
-    const endDate = new Date(startDate.getTime() + 3 * 60 * 60 * 1000)
+    const startDate = new Date(invitationConfig.eventDate);
+    const endDate = new Date(startDate.getTime() + 3 * 60 * 60 * 1000);
 
     const formatDate = (date) =>
       date
         .toISOString()
-        .replace(/[-:]/g, '')
-        .replace(/\.\d{3}Z$/, 'Z')
+        .replace(/[-:]/g, "")
+        .replace(/\.\d{3}Z$/, "Z");
 
     const calendarContent = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//Wedding Invitation//ID',
-      'BEGIN:VEVENT',
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//Wedding Invitation//ID",
+      "BEGIN:VEVENT",
       `DTSTART:${formatDate(startDate)}`,
       `DTEND:${formatDate(endDate)}`,
       `SUMMARY:The Wedding of ${invitationConfig.coupleNames}`,
-      'DESCRIPTION:Wedding Invitation',
-      'END:VEVENT',
-      'END:VCALENDAR',
-    ].join('\r\n')
+      "DESCRIPTION:Wedding Invitation",
+      "END:VEVENT",
+      "END:VCALENDAR",
+    ].join("\r\n");
 
     const blob = new Blob([calendarContent], {
-      type: 'text/calendar;charset=utf-8',
-    })
+      type: "text/calendar;charset=utf-8",
+    });
 
-    const downloadUrl = URL.createObjectURL(blob)
-    const link = document.createElement('a')
+    const downloadUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
 
-    link.href = downloadUrl
-    link.download = 'wedding-date.ics'
-    document.body.appendChild(link)
-    link.click()
-    link.remove()
+    link.href = downloadUrl;
+    link.download = "wedding-date.ics";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
 
-    URL.revokeObjectURL(downloadUrl)
-  }
+    URL.revokeObjectURL(downloadUrl);
+  };
 
   return (
     <button
@@ -101,191 +102,174 @@ function SaveDateButton() {
       <CalendarIcon />
       <span>Simpan Tanggal</span>
     </button>
-  )
+  );
 }
 
 export default function InvitationPage() {
-  const scrollContainerRef = useRef(null)
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft)
+  const scrollContainerRef = useRef(null);
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      setTimeLeft(calculateTimeLeft())
-    }, 1000)
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
 
-    return () => window.clearInterval(timer)
-  }, [])
+    return () => window.clearInterval(timer);
+  }, []);
 
   useEffect(() => {
-    const scrollContainer = scrollContainerRef.current
+    const scrollContainer = scrollContainerRef.current;
 
     if (!scrollContainer) {
-      return undefined
+      return undefined;
     }
 
     const revealSections = Array.from(
-      scrollContainer.querySelectorAll('.invitation-section'),
-    )
+      scrollContainer.querySelectorAll(".invitation-section"),
+    );
 
-    const sections = revealSections
+    const sections = revealSections;
 
-    scrollContainer.classList.add('reveal-ready')
+    scrollContainer.classList.add("reveal-ready");
 
     sections.forEach((section) => {
       const revealItems = Array.from(
-        section.querySelectorAll('.reveal-up'),
-      ).filter(
-        (element) =>
-          !element.closest('[aria-hidden="true"]'),
-      )
+        section.querySelectorAll(".reveal-up"),
+      ).filter((element) => !element.closest('[aria-hidden="true"]'));
 
       revealItems.forEach((element, index) => {
-        const delay = 80 + index * 110
+        const delay = 80 + index * 110;
 
-        element.style.setProperty(
-          '--reveal-delay',
-          `${delay}ms`,
-        )
+        element.style.setProperty("--reveal-delay", `${delay}ms`);
 
         if (!section.dataset.revealComplete) {
-          element.classList.remove('is-visible')
+          element.classList.remove("is-visible");
         }
-      })
-    })
+      });
+    });
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) {
-            return
+            return;
           }
 
-          const section = entry.target
+          const section = entry.target;
 
-          if (section.dataset.revealComplete === 'true') {
-            observer.unobserve(section)
-            return
+          if (section.dataset.revealComplete === "true") {
+            observer.unobserve(section);
+            return;
           }
 
           const revealItems = Array.from(
-            section.querySelectorAll('.reveal-up'),
-          ).filter(
-            (element) =>
-              !element.closest('[aria-hidden="true"]'),
-          )
+            section.querySelectorAll(".reveal-up"),
+          ).filter((element) => !element.closest('[aria-hidden="true"]'));
 
           window.requestAnimationFrame(() => {
-            section.classList.add('section-is-visible')
+            section.classList.add("section-is-visible");
 
             revealItems.forEach((element) => {
-              element.classList.add('is-visible')
-            })
+              element.classList.add("is-visible");
+            });
 
-            section.dataset.revealComplete = 'true'
-          })
+            section.dataset.revealComplete = "true";
+          });
 
-          observer.unobserve(section)
-        })
+          observer.unobserve(section);
+        });
       },
       {
         root: scrollContainer,
         threshold: 0.28,
-        rootMargin: '-6% 0px -12% 0px',
+        rootMargin: "-6% 0px -12% 0px",
       },
-    )
+    );
 
     sections.forEach((section) => {
-      observer.observe(section)
-    })
+      observer.observe(section);
+    });
 
     return () => {
-      observer.disconnect()
-      scrollContainer.classList.remove('reveal-ready')
-    }
-  }, [])
+      observer.disconnect();
+      scrollContainer.classList.remove("reveal-ready");
+    };
+  }, []);
 
   useEffect(() => {
-    const scrollContainer = scrollContainerRef.current
+    const scrollContainer = scrollContainerRef.current;
 
     if (!scrollContainer) {
-      return undefined
+      return undefined;
     }
 
-    let isScrollLocked = false
+    let isScrollLocked = false;
 
     const handleWheel = (event) => {
       const sections = Array.from(
-        scrollContainer.querySelectorAll('.invitation-section'),
-      )
+        scrollContainer.querySelectorAll(".invitation-section"),
+      );
 
-      if (
-        sections.length < 2 ||
-        isScrollLocked ||
-        Math.abs(event.deltaY) < 8
-      ) {
-        return
+      if (sections.length < 2 || isScrollLocked || Math.abs(event.deltaY) < 8) {
+        return;
       }
 
-      event.preventDefault()
+      event.preventDefault();
 
       const currentIndex = Math.round(
-        scrollContainer.scrollTop /
-          scrollContainer.clientHeight,
-      )
+        scrollContainer.scrollTop / scrollContainer.clientHeight,
+      );
 
-      const direction = event.deltaY > 0 ? 1 : -1
+      const direction = event.deltaY > 0 ? 1 : -1;
 
       const nextIndex = Math.min(
         Math.max(currentIndex + direction, 0),
         sections.length - 1,
-      )
+      );
 
       if (nextIndex === currentIndex) {
-        return
+        return;
       }
 
-      isScrollLocked = true
+      isScrollLocked = true;
 
       sections[nextIndex].scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
+        behavior: "smooth",
+        block: "start",
+      });
 
       window.setTimeout(() => {
-        isScrollLocked = false
-      }, 850)
-    }
+        isScrollLocked = false;
+      }, 850);
+    };
 
-    scrollContainer.addEventListener('wheel', handleWheel, {
+    scrollContainer.addEventListener("wheel", handleWheel, {
       passive: false,
-    })
+    });
 
     return () => {
-      scrollContainer.removeEventListener(
-        'wheel',
-        handleWheel,
-      )
-    }
-  }, [])
+      scrollContainer.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
 
   const countdownItems = [
     {
       value: timeLeft.days,
-      label: 'Hari',
+      label: "Hari",
     },
     {
       value: timeLeft.hours,
-      label: 'Jam',
+      label: "Jam",
     },
     {
       value: timeLeft.minutes,
-      label: 'Menit',
+      label: "Menit",
     },
     {
       value: timeLeft.seconds,
-      label: 'Detik',
+      label: "Detik",
     },
-  ]
+  ];
 
   return (
     <main
@@ -293,62 +277,58 @@ export default function InvitationPage() {
       className="invitation-scroll invitation-enter"
     >
       <section className="invitation-section wedding-hero-section">
-        <div
-          className="wedding-hero-background"
-          aria-hidden="true"
-        />
+        <div className="wedding-hero-background" aria-hidden="true" />
 
-        <div
-          className="wedding-hero-decorations"
-          aria-hidden="true"
-        >
+        <div className="wedding-hero-ambient" aria-hidden="true">
+          <FlyingBirds />
+        </div>
+
+        <div className="wedding-hero-decorations" aria-hidden="true">
           <img
-            className="section-2-decor decor-left-main"
-            src="/images/section-2-decor/decor-1.png"
+            className="wedding-bottom-piece wedding-bottom-left-tree"
+            src="/reference-assets/decoration-suk.png"
             alt=""
-            onError={(event) => {
-              event.currentTarget.style.display = 'none'
-            }}
-            />
+            draggable="false"
+          />
 
           <img
-            className="section-2-decor decor-right-main"
-            src="/images/section-2-decor/decor-2.png"
+            className="wedding-bottom-piece wedding-bottom-right-tree"
+            src="/reference-assets/decoration-pal.png"
             alt=""
-            onError={(event) => {
-              event.currentTarget.style.display = 'none'
-            }}
-            />
+            draggable="false"
+          />
 
           <img
-            className="section-2-decor decor-center-bird"
-            src="/images/section-2-decor/decor-3.png"
+            className="wedding-bottom-piece wedding-bottom-center-peacocks"
+            src="/reference-assets/decoration-mer.png"
             alt=""
-            onError={(event) => {
-              event.currentTarget.style.display = 'none'
-            }}
-            />
+            draggable="false"
+          />
 
           <img
-            className="section-2-decor decor-left-flower"
-            src="/images/section-2-decor/decor-4.png"
+            className="wedding-bottom-piece wedding-bottom-left-bird"
+            src="/reference-assets/bird-decoration-1.png"
             alt=""
-            onError={(event) => {
-              event.currentTarget.style.display = 'none'
-            }}
-            />
+            draggable="false"
+          />
 
           <img
-            className="section-2-decor decor-right-flower"
-            src="/images/section-2-decor/decor-5.png"
+            className="wedding-bottom-piece wedding-bottom-right-bird"
+            src="/reference-assets/bird-decoration-2.png"
             alt=""
-            onError={(event) => {
-              event.currentTarget.style.display = 'none'
-            }}
-            />
+            draggable="false"
+          />
         </div>
 
         <div className="wedding-hero-content">
+          <img
+            className="wedding-rumah-gadang"
+            src="/reference-assets/rumah-gadang.svg"
+            alt=""
+            aria-hidden="true"
+            draggable="false"
+          />
+
           <div className="portrait-frame reveal-up reveal-delay-1">
             <div
               className="portrait-photo"
@@ -356,10 +336,7 @@ export default function InvitationPage() {
               aria-label={`Foto ${invitationConfig.coupleNames}`}
             />
 
-            <div
-              className="portrait-frame-decoration"
-              aria-hidden="true"
-            />
+            <div className="portrait-frame-decoration" aria-hidden="true" />
           </div>
 
           <p className="wedding-hero-label reveal-up reveal-delay-2">
@@ -376,10 +353,7 @@ export default function InvitationPage() {
 
           <div className="countdown-grid">
             {countdownItems.map((item) => (
-              <div
-                className="countdown-card reveal-up"
-                key={item.label}
-              >
+              <div className="countdown-card reveal-up" key={item.label}>
                 <strong>{item.value}</strong>
                 <span>{item.label}</span>
               </div>
@@ -393,24 +367,18 @@ export default function InvitationPage() {
           <SaveDateButton />
         </div>
       </section>
-    
-      <section className="invitation-section blessing-section">
-        <div
-          className="blessing-background"
-          aria-hidden="true"
-        />
 
-        <div
-          className="blessing-overlay"
-          aria-hidden="true"
-        />
+      <section className="invitation-section blessing-section">
+        <div className="blessing-background" aria-hidden="true" />
+
+        <div className="blessing-overlay" aria-hidden="true" />
 
         <div className="blessing-content">
           <div className="blessing-monogram reveal-up reveal-delay-1">
             {invitationConfig.coupleNames
-              .split('&')
+              .split("&")
               .map((name) => name.trim().charAt(0).toUpperCase())
-              .join(' & ')}
+              .join(" & ")}
           </div>
 
           <div className="blessing-bird-wrapper reveal-up reveal-delay-2">
@@ -419,7 +387,7 @@ export default function InvitationPage() {
               src="/images/section-3-bird.png"
               alt=""
               onError={(event) => {
-                event.currentTarget.style.display = 'none'
+                event.currentTarget.style.display = "none";
               }}
             />
           </div>
@@ -437,29 +405,24 @@ export default function InvitationPage() {
             lang="ar"
             dir="rtl"
           >
-            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ
-            أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
-            وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ
-            فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+            وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+            لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ
+            إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
           </p>
 
           <p className="blessing-translation reveal-up reveal-delay-5">
-            Dan di antara tanda-tanda kekuasaan-Nya ialah Dia
-            menciptakan untukmu pasangan hidup dari jenismu sendiri,
-            supaya kamu merasa tenteram kepadanya. Dan dijadikan-Nya
-            di antaramu rasa kasih dan sayang. Sesungguhnya pada yang
-            demikian itu benar-benar terdapat tanda-tanda bagi kaum
-            yang berpikir.
+            Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
+            untukmu pasangan hidup dari jenismu sendiri, supaya kamu merasa
+            tenteram kepadanya. Dan dijadikan-Nya di antaramu rasa kasih dan
+            sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat
+            tanda-tanda bagi kaum yang berpikir.
           </p>
 
           <p className="blessing-reference reveal-up reveal-delay-6">
             QS. Ar-Rum 21
           </p>
 
-          <div
-            className="section-three-gallery-space"
-            aria-hidden="true"
-          />
+          <div className="section-three-gallery-space" aria-hidden="true" />
         </div>
       </section>
 
@@ -469,6 +432,6 @@ export default function InvitationPage() {
       <Section7 />
       <Section8 />
       <Section9 />
-</main>
-  )
+    </main>
+  );
 }
