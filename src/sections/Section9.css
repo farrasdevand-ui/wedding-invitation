@@ -512,3 +512,23 @@
   color: rgba(247, 232, 208, 0.48);
 }
 /* ===== END IVORY PALETTE SECTION 9 ===== */
+
+/* ===== ONLINE ENVELOPE BANK ACCOUNTS ===== */
+.section9__bankAccount + .section9__bankAccount {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(247, 232, 208, 0.24);
+}
+/* ===== END ONLINE ENVELOPE BANK ACCOUNTS ===== */
+
+/* ===== BOTTOM NAV SAFE SPACE ===== */
+.section9 .section9__content {
+  padding-bottom: calc(118px + env(safe-area-inset-bottom));
+}
+
+@media (max-height: 760px) {
+  .section9 .section9__content {
+    padding-bottom: calc(110px + env(safe-area-inset-bottom));
+  }
+}
+/* ===== END BOTTOM NAV SAFE SPACE ===== */

@@ -377,3 +377,54 @@
 .section5__peacocks {
   display: none !important;
 }
+
+/* ===== GROOM INSTAGRAM ===== */
+.section5__instagram {
+  width: fit-content;
+  min-width: 172px;
+  min-height: 40px;
+  margin: 24px auto 0;
+  padding: 9px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 238, 216, 0.7);
+  border-radius: 999px;
+  background: rgba(55, 22, 19, 0.78);
+  color: #fff3e3;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  box-shadow: 0 5px 14px rgba(38, 6, 6, 0.24);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.section5__instagram:hover {
+  transform: translateY(-2px);
+  background: rgba(86, 22, 24, 0.92);
+}
+
+.section5__instagram:active {
+  transform: translateY(0);
+}
+
+.section5__instagramIcon {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+}
+
+@media (max-height: 760px) {
+  .section5__instagram {
+    margin-top: 18px;
+    min-height: 38px;
+  }
+}
+/* ===== END GROOM INSTAGRAM ===== */

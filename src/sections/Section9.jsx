@@ -110,24 +110,51 @@ export default function Section9() {
 
             {openPanel === "money" && (
               <div className="section9__card">
-                <p className="section9__cardLabel">Bank / E-Wallet</p>
-                <p className="section9__cardValue">Sea Bank</p>
+                <div className="section9__bankAccount">
+                  <p className="section9__cardLabel">Bank</p>
+                  <p className="section9__cardValue">BRI</p>
 
-                <p className="section9__cardLabel">Nomor Rekening</p>
-                <p className="section9__cardValue">901637356405</p>
+                  <p className="section9__cardLabel">Nomor Rekening</p>
+                  <p className="section9__cardValue">023101058599503</p>
 
-                <p className="section9__cardLabel">Atas Nama</p>
-                <p className="section9__cardValue">Rihadatul Aisya Putri</p>
+                  <p className="section9__cardLabel">Atas Nama</p>
+                  <p className="section9__cardValue">Annisa Rahma Zikra</p>
 
-                <button
-                  type="button"
-                  className="section9__copyButton"
-                  onClick={() => copyText("901637356405", "money-account")}
-                >
-                  {copiedKey === "money-account"
-                    ? "Nomor rekening berhasil disalin"
-                    : "Salin Nomor Rekening"}
-                </button>
+                  <button
+                    type="button"
+                    className="section9__copyButton"
+                    onClick={() =>
+                      copyText("023101058599503", "money-bri")
+                    }
+                  >
+                    {copiedKey === "money-bri"
+                      ? "Nomor rekening berhasil disalin"
+                      : "Salin Rekening BRI"}
+                  </button>
+                </div>
+
+                <div className="section9__bankAccount">
+                  <p className="section9__cardLabel">Bank</p>
+                  <p className="section9__cardValue">BNI</p>
+
+                  <p className="section9__cardLabel">Nomor Rekening</p>
+                  <p className="section9__cardValue">1819409405</p>
+
+                  <p className="section9__cardLabel">Atas Nama</p>
+                  <p className="section9__cardValue">Kurniawan</p>
+
+                  <button
+                    type="button"
+                    className="section9__copyButton"
+                    onClick={() =>
+                      copyText("1819409405", "money-bni")
+                    }
+                  >
+                    {copiedKey === "money-bni"
+                      ? "Nomor rekening berhasil disalin"
+                      : "Salin Rekening BNI"}
+                  </button>
+                </div>
               </div>
             )}
           </div>
