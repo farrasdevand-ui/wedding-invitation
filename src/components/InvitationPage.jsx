@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import FlyingBirds from "./FlyingBirds";
+import BottomNavigation from "./BottomNavigation";
 import { invitationConfig } from "../config/invitation";
 import Section4 from "../sections/Section4";
 import Section5 from "../sections/Section5";
@@ -216,6 +217,7 @@ export default function InvitationPage() {
   ];
 
   return (
+    <>
     <main
       ref={scrollContainerRef}
       className="invitation-scroll invitation-enter"
@@ -377,5 +379,8 @@ export default function InvitationPage() {
       <Section8 />
       <Section9 />
     </main>
+
+    <BottomNavigation />
+  </>
   );
 }

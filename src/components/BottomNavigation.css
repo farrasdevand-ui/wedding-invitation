@@ -1,0 +1,110 @@
+.bottomNav {
+  position: fixed;
+  z-index: 10000;
+
+  left: 50%;
+  bottom: calc(10px + env(safe-area-inset-bottom));
+
+  width: min(calc(100% - 22px), 408px);
+  height: 66px;
+
+  transform: translateX(-50%);
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 10px;
+
+  border: 1px solid rgba(102, 31, 29, 0.14);
+  border-radius: 15px;
+
+  background: rgba(246, 235, 218, 0.95);
+
+  box-shadow:
+    0 8px 25px rgba(60, 13, 14, 0.2),
+    0 2px 8px rgba(60, 13, 14, 0.08);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.bottomNav__button {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: #741b1f;
+  color: #f8ead6;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 8px rgba(74, 9, 13, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.bottomNav__button:hover {
+  background: #641418;
+}
+
+.bottomNav__button:active {
+  transform: scale(0.92);
+}
+
+.bottomNav__button.is-active {
+  background: #4f0d12;
+
+  box-shadow:
+    0 4px 12px rgba(55, 5, 9, 0.28),
+    inset 0 0 0 1px rgba(255, 238, 213, 0.25);
+
+  transform: translateY(-2px);
+}
+
+.bottomNav__icon {
+  width: 23px;
+  height: 23px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 360px) {
+  .bottomNav {
+    width: calc(100% - 14px);
+    gap: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .bottomNav__button {
+    height: 46px;
+  }
+
+  .bottomNav__icon {
+    width: 21px;
+    height: 21px;
+  }
+}
